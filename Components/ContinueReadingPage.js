@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, ProgressBarAndroid, Button, Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, ProgressBarAndroid, Image } from 'react-native';
+import { useFonts } from 'expo-font'; // Import useFonts from expo-font
 
 // Import local images
 const book1Image = require('../assets/Images/1.png');
@@ -11,12 +12,12 @@ const tabs = [
   {
     id: '1',
     title: 'Tab 1',
-    leftColor: 'red',
-    rightColor: 'blue',
-    bookTitle: 'Book A',
-    authorName: 'Author X',
+    leftColor: '#CBF5FF',
+    rightColor: '#fff',
+    bookTitle: 'A Day of Fallen Night',
+    authorName: 'Samantha Shannon',
     progress: 0.7,
-    image: book1Image, 
+    image: book1Image,
   },
   {
     id: '2',
@@ -26,7 +27,7 @@ const tabs = [
     bookTitle: 'Book B',
     authorName: 'Author Y',
     progress: 0.4,
-    image: book2Image, 
+    image: book2Image,
   },
   {
     id: '3',
@@ -36,7 +37,7 @@ const tabs = [
     bookTitle: 'Book C',
     authorName: 'Author Z',
     progress: 0.2,
-    image: book3Image, // Use the imported local image
+    image: book3Image,
   },
   {
     id: '4',
@@ -46,14 +47,25 @@ const tabs = [
     bookTitle: 'Book D',
     authorName: 'Author W',
     progress: 0.9,
-    image: book4Image, // Use the imported local image
+    image: book4Image,
   },
 ];
 
 const TabList = () => {
+  const [fontsLoaded] = useFonts({
+    'Gordita-Bold': require('../assets/fonts/Gordita-Bold.ttf'), // Load the Gordita Bold font
+    'Gordita-Medium': require('../assets/fonts/Gordita-Medium.ttf'),
+    'Gordita-Regular': require('../assets/fonts/Gordita-Regular.ttf'), // Load the Gordita Regular font
+  });
+
+  // Check if the font is loaded before rendering the component
+  if (!fontsLoaded) {
+    return null; // Render nothing or a loading screen
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>ContinueReadingPage</Text>
+      <Text style={styles.title}>Continue Reading Page</Text>
       <FlatList
         data={tabs}
         horizontal={true}
@@ -65,10 +77,12 @@ const TabList = () => {
               <Image source={item.image} style={styles.bookImage} />
             </View>
             <View style={[styles.rightSection, { backgroundColor: item.rightColor }]}>
-              <Text style={styles.bookTitle}>{item.title}</Text>
+              <Text style={styles.bookTitle}>{item.bookTitle}</Text>
               <Text style={styles.authorName}>{item.authorName}</Text>
               <ProgressBarAndroid style={styles.progressBar} styleAttr="Horizontal" indeterminate={false} progress={item.progress} />
-              <Button title="Continue" onPress={() => console.log('Continue button pressed')} />
+              <TouchableOpacity style={styles.continueButton} onPress={() => console.log('Continue button pressed')}>
+                <Text style={styles.continueButtonText}>Continue</Text>
+              </TouchableOpacity>
             </View>
           </TouchableOpacity>
         )}
@@ -80,12 +94,14 @@ const TabList = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 5,
-    marginTop: 300,
+    marginTop: 210,
+    backgroundColor: '#fff',
   },
   title: {
+    fontFamily: 'Gordita-Medium', // Use the Gordita Bold font
     fontSize: 24,
-    fontWeight: 'bold',
     marginBottom: 10,
+    paddingLeft: 10,
   },
   tab: {
     backgroundColor: 'transparent',
@@ -116,16 +132,32 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   bookTitle: {
+    fontFamily: 'Gordita-Bold', // Use the Gordita Bold font
     fontSize: 16,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
   },
   authorName: {
+    fontFamily: 'Gordita-Regular', // Use the Gordita Regular font
     fontSize: 14,
-    color: 'white',
+    color: 'black',
   },
   progressBar: {
     marginTop: 10,
+  },
+  continueButton: {
+    backgroundColor: 'white',
+    borderColor: 'blue',
+    borderWidth: 1,
+    borderRadius: 12,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    marginTop: 10,
+    alignItems: 'center',
+  },
+  continueButtonText: {
+    color: 'red',
+    fontFamily : 'Gordita-Medium', // Use the Gordita Medium font
   },
 });
 
