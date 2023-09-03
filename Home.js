@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
 import { useFonts } from 'expo-font';
+import ContinueReadingPage from './Components/ContinueReadingPage'; 
 
 const Home = () => {
   const [fontsLoaded] = useFonts({
@@ -38,7 +39,8 @@ const Home = () => {
           style={styles.searchIcon}
         />
       </View>
-
+      <Text style={styles.sectionTitle}>Continue Reading</Text>
+      <ContinueReadingPage />
       {/* Title */}
       <Text style={styles.title}>Home Page</Text>
     </View>
