@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Home from './Home'; // Import the Home component
 
 const LoginPage = ({ navigation }) => {
@@ -12,7 +12,8 @@ const LoginPage = ({ navigation }) => {
     <View style={styles.container}>
       {/* Pink Background Container */}
       <View style={styles.pinkContainer}>
-        <Text style={styles.titleText}>Title Text</Text>
+        {/* Title Image */}
+        <Image source={require('./assets/title.png')} style={styles.titleImage} />
 
         {/* Circular arrow inside the pink container */}
         <TouchableOpacity style={styles.greenArrow} onPress={handleGoToHome}>
@@ -23,7 +24,7 @@ const LoginPage = ({ navigation }) => {
       {/* Background Image */}
       <View style={styles.backgroundContainer}>
         <Image
-          source={require('./assets/Images/cover.jpg')}
+          source={require('./assets/Images/test1.jpg')}
           style={styles.backgroundImage}
         />
       </View>
@@ -38,14 +39,14 @@ const styles = StyleSheet.create({
   },
   pinkContainer: {
     flex: 1,
-    backgroundColor: 'pink', // Pink background color
+    backgroundColor: 'white', // Pink background color
     justifyContent: 'center',
     alignItems: 'center',
   },
-  titleText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: 'white', // Text color
+  titleImage: {
+    width: 200, // Adjust the width as needed
+    height: 100, // Adjust the height as needed
+    resizeMode: 'contain', // Maintain aspect ratio and fit the container
   },
   greenArrow: {
     backgroundColor: 'green',
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     borderRadius: 25, // Makes it circular
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 10, // Adjust the space between the title text and the arrow
+    marginTop: 10, // Adjust the space between the title image and the arrow
   },
   arrowImage: {
     width: 20,
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 500, // Adjust the height as needed to minimize the image
     resizeMode: 'cover', // Maintain aspect ratio and cover the container
-    bottom: -90, // Position the image at the very bottom of the container
+    bottom: -70, // Position the image at the very bottom of the container
   },
 });
 
