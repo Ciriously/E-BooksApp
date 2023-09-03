@@ -20,7 +20,7 @@ const Home = () => {
         </View>
         <View style={styles.navRight}>
           <Image
-            source={require('./assets/right-arrow.png')}
+            source={require('./assets/icon2.png')}
             style={styles.profileIcon}
           />
         </View>
@@ -57,14 +57,14 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   navbar: {
-    backgroundColor: 'lightblue',
+    backgroundColor: '#fff',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 30,
     width: '100%',
     position: 'absolute',
-    top: 15,
+    top: 20,
   },
   navLeft: {
     flex: 1,
@@ -74,25 +74,25 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   goodMorningText: {
-    fontSize: 18,
-    fontFamily: 'Gordita-Regular',
+    fontSize: 38,
+    fontFamily: 'Gordita-Bold',
   },
   profileIcon: {
-    width: 30,
-    height: 30,
+    width: 38,
+    height: 38,
     resizeMode: 'contain',
   },
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',
     position: 'absolute',
-    top: 100, // Adjust the top position to align it below the navbar
-    width: '100%',
+    top: 140, // Adjust the top position to align it below the navbar
+    width: 400,
     paddingHorizontal: 30,
     backgroundColor: 'white', // Set the background color of the search bar
     borderWidth: 1, // Add a border
     borderColor: 'gray', // Set the border color
-    borderRadius: 5, // Add border radius
+    borderRadius: 25, // Add border radius
     shadowColor: 'gray', // Set box shadow color
     shadowOpacity: 0.5, // Set box shadow opacity
     shadowOffset: {
