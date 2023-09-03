@@ -2,10 +2,10 @@ import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, ProgressBarAndroid, Button, Image } from 'react-native';
 
 // Import local images
-const book1Image = require('../assets/Images/image9.png');
-const book2Image = require('../assets/Images/image9.png');
-const book3Image = require('../assets/Images/image9.png');
-const book4Image = require('../assets/Images/image9.png');
+const book1Image = require('../assets/Images/1.png');
+const book2Image = require('../assets/Images/2.png');
+const book3Image = require('../assets/Images/3.png');
+const book4Image = require('../assets/Images/4.png');
 
 const tabs = [
   {
@@ -16,7 +16,7 @@ const tabs = [
     bookTitle: 'Book A',
     authorName: 'Author X',
     progress: 0.7,
-    image: book1Image, // Use the imported local image
+    image: book1Image, 
   },
   {
     id: '2',
@@ -26,7 +26,7 @@ const tabs = [
     bookTitle: 'Book B',
     authorName: 'Author Y',
     progress: 0.4,
-    image: book2Image, // Use the imported local image
+    image: book2Image, 
   },
   {
     id: '3',
