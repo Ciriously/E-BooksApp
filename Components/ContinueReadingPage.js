@@ -96,6 +96,8 @@ const styles = StyleSheet.create({
     padding: 5,
     marginTop: 210,
     backgroundColor: '#fff',
+    marginRight: -40,
+    marginLeft: -10,
   },
   title: {
     fontFamily: 'Gordita-Medium', // Use the Gordita Bold font

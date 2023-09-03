@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Image, TextInput, ScrollView } from 'react-native';
 import { useFonts } from 'expo-font';
 import ContinueReadingPage from './Components/ContinueReadingPage'; 
+
 
 const Home = () => {
   const [fontsLoaded] = useFonts({
@@ -14,7 +15,7 @@ const Home = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.navbar}>
         <View style={styles.navLeft}>
           <Text style={styles.goodMorningText}>Explore</Text>
@@ -39,35 +40,34 @@ const Home = () => {
           style={styles.searchIcon}
         />
       </View>
-      <Text style={styles.sectionTitle}>Continue Reading</Text>
+      {/* <Text style={styles.sectionTitle}>Continue Reading</Text> */}
       <ContinueReadingPage />
-      {/* Title */}
-      <Text style={styles.title}>Home Page</Text>
-    </View>
+      {/* Tabs Container */}
+      
+      
+   </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor:'#fff',
+    flexGrow: 1,
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
   },
   title: {
     fontFamily: 'Gordita-Bold',
     fontSize: 24,
     marginBottom: 20,
+    textAlign: 'center',
   },
   navbar: {
     backgroundColor: '#fff',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 30,
-    width: '100%',
-    position: 'absolute',
-    top: 20,
+    paddingTop: 40,
+    paddingBottom: 30,
   },
   navLeft: {
     flex: 1,
@@ -88,20 +88,17 @@ const styles = StyleSheet.create({
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    position: 'absolute',
-    top: 120, // Adjust the top position to align it below the navbar
-    width: 400,
+    width: '100%',
     height: 50,
-    paddingHorizontal: 30,
-    marginLeft: 20, 
-    marginRight: 20, 
-    borderRadius: 25, 
-    shadowColor: 'gray', 
-    shadowOpacity: 0.5, 
-    backgroundColor: '#F8F8F8', 
-    
+    paddingHorizontal: 20,
+    // marginTop: 0,
+    marginBottom: -200,
+    marginLeft: -10,
+    borderRadius: 25,
+    shadowColor: 'gray',
+    shadowOpacity: 0.5,
+    backgroundColor: '#F8F8F8',
   },
-  
   searchIcon: {
     width: 20,
     height: 20,
@@ -111,11 +108,18 @@ const styles = StyleSheet.create({
   searchInput: {
     flex: 1,
     height: 40,
-    paddingLeft: 3, // Adjust the left padding for the input
+    paddingLeft: 10,
     fontFamily: 'Gordita-Regular',
     fontSize: 16,
   },
-  
+  sectionTitle: {
+    fontFamily: 'Gordita-Bold',
+    fontSize: 20,
+    marginBottom: 10,
+  },
+  tabsContainer: {
+    marginTop: 20,
+  },
 });
 
 export default Home;
