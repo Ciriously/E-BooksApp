@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TextInput, ScrollView } from 'react-native';
 import { useFonts } from 'expo-font';
 import ContinueReadingPage from './Components/ContinueReadingPage'; 
-
+import BooksGenreTabs from './Components/BooksGenreTabs';
 
 const Home = () => {
   const [fontsLoaded] = useFonts({
@@ -18,7 +18,7 @@ const Home = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.navbar}>
         <View style={styles.navLeft}>
-          <Text style={styles.goodMorningText}>Explore</Text>
+          <Text style={styles.goodMorningText}>goodMorningTextaditya</Text>
         </View>
         <View style={styles.navRight}>
           <Image
@@ -42,10 +42,13 @@ const Home = () => {
       </View>
       {/* <Text style={styles.sectionTitle}>Continue Reading</Text> */}
       <ContinueReadingPage />
-      {/* Tabs Container */}
+    
+      <BooksGenreTabs />
+    
       
       
    </ScrollView>
+   
   );
 };
 
