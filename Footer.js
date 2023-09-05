@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const Footer = ({ activeTab, onChangeTab }) => {
+
+const Footer = ({ activeTab, onChangeTab, navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
@@ -20,12 +22,14 @@ const Footer = ({ activeTab, onChangeTab }) => {
 
       <TouchableOpacity
         style={[styles.tab, activeTab === 'profile' && styles.activeTab]}
-        onPress={() => onChangeTab('profile')}
+        onPress={() => {
+          onChangeTab('profile');
+          // Navigate to the profile screen when the Profile tab is pressed
+          navigation.navigate('Profile');
+        }}
       >
         <Text style={styles.tabText}>Profile</Text>
       </TouchableOpacity>
-
-     
     </View>
   );
 };

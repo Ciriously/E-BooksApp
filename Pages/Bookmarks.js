@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TextInput, ScrollView } from 'react-native';
 import { useFonts } from 'expo-font';
-import ContinueReadingPage from './Components/ContinueReadingPage'; 
-import BooksGenreTabs from './Components/BooksGenreTabs';
-import Footer from './Footer';
+import ContinueReadingPage from '../Components/ContinueReadingPage'; 
+import BooksGenreTabs from '../Components/BooksGenreTabs';
+// import Footer from './Footer';
 
 
 const Home = () => {
   const [fontsLoaded] = useFonts({
-    'Gordita-Regular': require('./assets/fonts/Gordita-Regular.ttf'),
-    'Gordita-Bold': require('./assets/fonts/Gordita-Bold.ttf'),
+    'Gordita-Regular': require('../assets/fonts/Gordita-Regular.ttf'),
+    'Gordita-Bold': require('../assets/fonts/Gordita-Bold.ttf'),
   });
 
   if (!fontsLoaded) {
@@ -24,7 +24,7 @@ const Home = () => {
         </View>
         <View style={styles.navRight}>
           <Image
-            source={require('./assets/icon2.png')}
+            source={require('../assets/icon2.png')}
             style={styles.profileIcon}
           />
         </View>
@@ -38,16 +38,15 @@ const Home = () => {
           style={styles.searchInput}
         />
         <Image
-          source={require('./assets/search-icon.png')}
+          source={require('../assets/search-icon.png')}
           style={styles.searchIcon}
         />
       </View>
       {/* <Text style={styles.sectionTitle}>Continue Reading</Text> */}
       <ContinueReadingPage />
     
-      <BooksGenreTabs />
-    
-      <Footer />
+      {/* <BooksGenreTabs /> */}
+
       
    </ScrollView>
    

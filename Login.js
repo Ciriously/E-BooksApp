@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-const LoginPage = ({ navigation }) => {
+const LoginPage = ({ navigation, showFooter }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to My App</Text>
       <Image
-        source={require('./assets/casual-life-3d-young-couple-sitting-on-the-floor-and-reading-books.png')} // Replace with your image path
+        source={require('./assets/casual-life-3d-young-couple-sitting-on-the-floor-and-reading-books.png')}
         style={styles.image}
       />
       <TouchableOpacity
@@ -15,6 +15,9 @@ const LoginPage = ({ navigation }) => {
       >
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
+
+      {/* Conditionally render the Footer */}
+      {showFooter && <Footer />}
     </View>
   );
 };
