@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Image, TextInput, ScrollView } from 'react-nati
 import { useFonts } from 'expo-font';
 import ContinueReadingPage from './Components/ContinueReadingPage'; 
 import BooksGenreTabs from './Components/BooksGenreTabs';
+import Footer from './Footer';
+
 
 const Home = () => {
   const [fontsLoaded] = useFonts({
@@ -45,7 +47,7 @@ const Home = () => {
     
       <BooksGenreTabs />
     
-      
+      <Footer />
       
    </ScrollView>
    
