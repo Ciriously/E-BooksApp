@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'reac
 import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/native';
 import ContinueReadingPage from '../Components/ContinueReadingPage'; 
-import Footer from '../Footer';
+// import Footer from '../Footer';
 import PopularNow from '../Components/PopularNow';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -52,7 +52,7 @@ const Home = () => {
       </View>
       <ContinueReadingPage />
     <PopularNow />
-      <Footer />
+      {/* <Footer /> */}
    </ScrollView>
   );
 };
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
   goodMorningText: {
     fontSize: 38,
     fontFamily: 'Gordita-Bold',
+    color: 'red',
   },
   profileIcon: {
     width: 38,

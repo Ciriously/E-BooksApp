@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity, ScrollView } from 'react-native';
 
 const data = {
-  "Popular Now": [
+  "Best Sellers": [
     {
       id: '1',
       title: 'Book 1',
@@ -111,15 +111,18 @@ const PopularNow = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
+    marginLeft: 10,
+    
   },
   title: {
     fontFamily: 'Gordita-Bold',
     fontSize: 24,
     marginBottom: 10,
-    marginLeft: 20,
+    marginLeft: 10,
   },
   categoryTabs: {
-    marginLeft: 20,
+    marginLeft: 8,
+    marginBottom: 10,
   },
   tab: {
     marginRight: 10,
@@ -146,7 +149,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Gordita-Bold',
     fontSize: 20,
     marginBottom: 10,
-    marginLeft: 20,
+    marginLeft: 10,
   },
   itemContainer: {
     marginRight: 20,
@@ -156,16 +159,19 @@ const styles = StyleSheet.create({
     height: 180,
     resizeMode: 'cover',
     borderRadius: 8,
+    marginLeft: 10,
   },
   bookTitle: {
     marginTop: 5,
     fontFamily: 'Gordita-Bold',
     fontSize: 16,
+    marginLeft: 10,
   },
   bookAuthor: {
     fontFamily: 'Gordita-Regular',
     fontSize: 14,
     color: 'gray',
+    marginLeft: 10,
   },
 });
 

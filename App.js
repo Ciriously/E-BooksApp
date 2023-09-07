@@ -5,6 +5,8 @@ import LoginPage from './Login';
 import Home from './Pages/Home';
 import Profile from './Pages/Profile';
 import Bookmarks from './Pages/library'; // Import the Bookmarks screen
+import Footer from './Footer';
+
 
 const Stack = createStackNavigator();
 
@@ -33,6 +35,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
+      <Footer />
     </NavigationContainer>
   );
 }

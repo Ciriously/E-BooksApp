@@ -33,10 +33,30 @@ const Profile = () => {
 
         {/* User Details */}
         <View style={styles.userDetails}>
-          <Text style={styles.userName}>Guddu</Text>
+          <Text style={styles.userName}>🥰Guddu</Text>
           <Text style={styles.userBio}>
             Gudiya's Guddu aka Aditya Mishra loves Reading books
           </Text>
+
+          {/* Fields */}
+          <View style={styles.fieldsContainer}>
+            <View style={styles.field}>
+              <Text style={styles.fieldNumber}>123</Text>
+              <Text style={styles.fieldText}>Books Read</Text>
+            </View>
+            <View style={styles.field}>
+              <Text style={styles.fieldNumber}>1</Text>
+              <Text style={styles.fieldText}>Rank</Text>
+            </View>
+            <View style={styles.field}>
+              <Text style={styles.fieldNumber}>1000</Text>
+              <Text style={styles.fieldText}>Followers</Text>
+            </View>
+            <View style={styles.field}>
+              <Text style={styles.fieldNumber}>200</Text>
+              <Text style={styles.fieldText}>Following</Text>
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -97,6 +117,23 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     paddingHorizontal: 20,
+  },
+  fieldsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+  },
+  field: {
+    alignItems: 'center',
+  },
+  fieldNumber: {
+    fontFamily: 'Gordita-Bold',
+    fontSize: 20,
+  },
+  fieldText: {
+    fontFamily: 'Gordita-Regular',
+    fontSize: 14,
+    color: '#777',
   },
 });
 
