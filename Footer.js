@@ -1,63 +1,74 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 
+const Footer = () => {
+  const navigation = useNavigation();
 
-const Footer = ({ activeTab, onChangeTab, navigation }) => {
+  const handleTabPress = (tabName) => {
+    // Navigate to the corresponding screen when a tab is pressed
+    if (tabName === 'profile') {
+      navigation.navigate('Profile');
+    } else if (tabName === 'bookmarks') {
+      navigation.navigate('Bookmarks');
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={[styles.tab, activeTab === 'home' && styles.activeTab]}
-        onPress={() => onChangeTab('home')}
+      <TabButton
+        tabName="home"
+        onPress={() => handleTabPress('home')}
       >
-        <Text style={styles.tabText}>Home</Text>
-      </TouchableOpacity>
+        Home
+      </TabButton>
 
-      <TouchableOpacity
-        style={[styles.tab, activeTab === 'bookmarks' && styles.activeTab]}
-        onPress={() => onChangeTab('bookmarks')}
+      <TabButton
+        tabName="bookmarks"
+        onPress={() => handleTabPress('bookmarks')}
       >
-        <Text style={styles.tabText}>Bookmarks</Text>
-      </TouchableOpacity>
+        Bookmarks
+      </TabButton>
 
-      <TouchableOpacity
-        style={[styles.tab, activeTab === 'profile' && styles.activeTab]}
-        onPress={() => {
-          onChangeTab('profile');
-          // Navigate to the profile screen when the Profile tab is pressed
-          navigation.navigate('Profile');
-        }}
+      <TabButton
+        tabName="profile"
+        onPress={() => handleTabPress('profile')}
       >
-        <Text style={styles.tabText}>Profile</Text>
-      </TouchableOpacity>
+        Profile
+      </TabButton>
     </View>
   );
 };
+
+const TabButton = ({ tabName, onPress, children }) => (
+  <TouchableOpacity
+    style={styles.tab}
+    onPress={onPress}
+  >
+    <Text style={styles.tabText}>
+      {children}
+    </Text>
+  </TouchableOpacity>
+);
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#fff', // Background color of the footer
+    backgroundColor: '#fff',
     borderTopWidth: 1,
-    borderTopColor: '#ddd', // Border color at the top of the footer
-    height: 60, // Height of the footer
+    borderTopColor: '#ddd',
+    height: 60,
   },
   tab: {
     flex: 1,
     alignItems: 'center',
     padding: 10,
   },
-  activeTab: {
-    backgroundColor: '#007AFF', // Background color for the active tab
-  },
   tabText: {
-    color: '#000', // Text color for inactive tabs
+    color: '#000',
     fontWeight: 'bold',
-  },
-  activeTabText: {
-    color: '#fff', // Text color for the active tab
   },
 });
 

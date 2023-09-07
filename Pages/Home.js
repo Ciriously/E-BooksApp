@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
 import { useFonts } from 'expo-font';
-import { useNavigation } from '@react-navigation/native'; // Import useNavigation
+import { useNavigation } from '@react-navigation/native';
 import ContinueReadingPage from '../Components/ContinueReadingPage'; 
 import BooksGenreTabs from '../Components/BooksGenreTabs';
+import Footer from '../Footer';
 
 const Home = () => {
   const [fontsLoaded] = useFonts({
@@ -11,15 +12,14 @@ const Home = () => {
     'Gordita-Bold': require('../assets/fonts/Gordita-Bold.ttf'),
   });
 
-  const navigation = useNavigation(); // Get navigation object
+  const navigation = useNavigation();
 
   if (!fontsLoaded) {
     return null;
   }
 
-  // Function to navigate to the profile page
   const goToProfilePage = () => {
-    navigation.navigate('Profile'); // Replace 'Profile' with the actual name of your profile screen
+    navigation.navigate('Profile'); // Replace 'Profile' with your actual profile screen name
   };
 
   return (
@@ -29,7 +29,6 @@ const Home = () => {
           <Text style={styles.goodMorningText}>goodMorningTextaditya</Text>
         </View>
         <View style={styles.navRight}>
-          {/* Wrap the Image component with TouchableOpacity */}
           <TouchableOpacity onPress={goToProfilePage}>
             <Image
               source={require('../assets/icon2.png')}
@@ -39,7 +38,6 @@ const Home = () => {
         </View>
       </View>
 
-      {/* Search Bar */}
       <View style={styles.searchBar}>
         <TextInput
           placeholder="Search for a book"
@@ -54,6 +52,7 @@ const Home = () => {
       <ContinueReadingPage />
     
       <BooksGenreTabs />
+      <Footer />
    </View>
   );
 };
@@ -100,7 +99,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 50,
     paddingHorizontal: 20,
-    // marginTop: 0,
     marginBottom: -200,
     marginLeft: -10,
     borderRadius: 25,
