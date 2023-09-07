@@ -1,14 +1,13 @@
 import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import GenreScreen from './GenreScreen';
-import { StyleSheet } from 'react-native'; // Import StyleSheet
 
 const Tab = createMaterialTopTabNavigator();
 
 const BooksGenreTabs = () => {
   return (
     <Tab.Navigator
-      screenOptions={{
+      screenOptions={({ route }) => ({
         tabBarActiveTintColor: 'red',
         tabBarInactiveTintColor: 'gray',
         tabBarScrollEnabled: true,
@@ -19,6 +18,7 @@ const BooksGenreTabs = () => {
         tabBarStyle: {
           backgroundColor: 'white',
           paddingTop: 10,
+          shadowColor: '#007AFF', // Light blue shadow color
         },
         tabBarIndicatorStyle: {
           backgroundColor: 'pink',
@@ -26,23 +26,40 @@ const BooksGenreTabs = () => {
         tabBarItemStyle: {
           marginHorizontal: 12, // Adjust the horizontal spacing between tabs
         },
-      }}
+      })}
     >
-      <Tab.Screen name="Fiction" component={GenreScreen} initialParams={{ genre: 'Fiction' }} />
-      <Tab.Screen name="Mystery" component={GenreScreen} initialParams={{ genre: 'Mystery' }} />
-      <Tab.Screen name="Science Fiction" component={GenreScreen} initialParams={{ genre: 'Science Fiction' }} />
-      <Tab.Screen name="Romance" component={GenreScreen} initialParams={{ genre: 'Romance' }} />
-      <Tab.Screen name="Fantasy" component={GenreScreen} initialParams={{ genre: 'Fantasy' }} />
+      <Tab.Screen
+        name="Fiction"
+        component={GenreScreen}
+        initialParams={{ genre: 'Fiction' }}
+        options={{ tabBarShowLabel: true }} // Show tab labels
+      />
+      <Tab.Screen
+        name="Mystery"
+        component={GenreScreen}
+        initialParams={{ genre: 'Mystery' }}
+        options={{ tabBarShowLabel: true }} // Show tab labels
+      />
+      <Tab.Screen
+        name="Science Fiction"
+        component={GenreScreen}
+        initialParams={{ genre: 'Science Fiction' }}
+        options={{ tabBarShowLabel: true }} // Show tab labels
+      />
+      <Tab.Screen
+        name="Romance"
+        component={GenreScreen}
+        initialParams={{ genre: 'Romance' }}
+        options={{ tabBarShowLabel: true }} // Show tab labels
+      />
+      <Tab.Screen
+        name="Fantasy"
+        component={GenreScreen}
+        initialParams={{ genre: 'Fantasy' }}
+        options={{ tabBarShowLabel: true }} // Show tab labels
+      />
     </Tab.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  // Add more styles here as needed
-  container: {
-    flex: 1,
-    backgroundColor: 'lightgray',
-  },
-});
 
 export default BooksGenreTabs;

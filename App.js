@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginPage from './Login';
 import Home from './Pages/Home';
 import Profile from './Pages/Profile';
-import Bookmarks from './Pages/Bookmarks'; // Import the Bookmarks screen
+import Bookmarks from './Pages/library'; // Import the Bookmarks screen
 
 const Stack = createStackNavigator();
 

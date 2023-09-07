@@ -27,7 +27,7 @@ const Footer = () => {
         tabName="bookmarks"
         onPress={() => handleTabPress('bookmarks')}
       >
-        Bookmarks
+        Library
       </TabButton>
 
       <TabButton

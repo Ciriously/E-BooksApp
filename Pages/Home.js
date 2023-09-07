@@ -3,8 +3,10 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'reac
 import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/native';
 import ContinueReadingPage from '../Components/ContinueReadingPage'; 
-import BooksGenreTabs from '../Components/BooksGenreTabs';
+// import BooksGenreTabs from '../Components/BooksGenreTabs';
 import Footer from '../Footer';
+import PopularNow from '../Components/PopularNow';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Home = () => {
   const [fontsLoaded] = useFonts({
@@ -23,7 +25,7 @@ const Home = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.navbar}>
         <View style={styles.navLeft}>
           <Text style={styles.goodMorningText}>goodMorningTextaditya</Text>
@@ -50,10 +52,10 @@ const Home = () => {
         />
       </View>
       <ContinueReadingPage />
-    
-      <BooksGenreTabs />
+    <PopularNow />
+      {/* <BooksGenreTabs /> */}
       <Footer />
-   </View>
+   </ScrollView>
   );
 };
 
