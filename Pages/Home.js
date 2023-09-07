@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'reac
 import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/native';
 import ContinueReadingPage from '../Components/ContinueReadingPage'; 
-// import BooksGenreTabs from '../Components/BooksGenreTabs';
 import Footer from '../Footer';
 import PopularNow from '../Components/PopularNow';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -28,7 +27,7 @@ const Home = () => {
     <ScrollView style={styles.container}>
       <View style={styles.navbar}>
         <View style={styles.navLeft}>
-          <Text style={styles.goodMorningText}>goodMorningTextaditya</Text>
+          <Text style={styles.goodMorningText}>Good Morning, Adi</Text>
         </View>
         <View style={styles.navRight}>
           <TouchableOpacity onPress={goToProfilePage}>
@@ -53,7 +52,6 @@ const Home = () => {
       </View>
       <ContinueReadingPage />
     <PopularNow />
-      {/* <BooksGenreTabs /> */}
       <Footer />
    </ScrollView>
   );
