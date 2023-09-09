@@ -78,13 +78,13 @@ const data = {
   ],
   "Science Fiction": [
     {
-      id: '5',
+      id: '11',
       title: 'Book 5',
       author: 'Author 5',
       imageUrl: require('../assets/Images/5.png'),
     },
     {
-      id: '6',
+      id: '12',
       title: 'Book 6',
       author: 'Author 6',
       imageUrl: require('../assets/Images/6.png'),

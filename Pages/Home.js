@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'reac
 import { useFonts } from 'expo-font';
 import { useNavigation } from '@react-navigation/native';
 import ContinueReadingPage from '../Components/ContinueReadingPage'; 
-// import Footer from '../Footer';
 import PopularNow from '../Components/PopularNow';
 import { ScrollView } from 'react-native-gesture-handler';
 
@@ -26,10 +25,13 @@ const Home = () => {
   return (
     <ScrollView style={styles.container}>
 <View style={styles.navbar}>
-  <View style={styles.navLeft}>
-    <Text style={styles.goodMorningText}>Hello,</Text>
-    <Text style={styles.adiText}>Adi!</Text>
-  </View>
+<View style={styles.navLeft}>
+<Text style={styles.greetingText}>
+  <Text style={styles.helloText}>Hello,</Text>
+  <Text style={styles.adiText}> Adi!</Text>
+  </Text>
+</View>
+
   <View style={styles.navRight}>
     <TouchableOpacity onPress={goToProfilePage}>
       <Image
@@ -88,19 +90,24 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-end',
   },
-  goodMorningText: {
+  greetingText: {
+    flexDirection: 'row',
+    alignItems: 'baseline', // Align text at the baseline
+  },
+  
+  helloText: {
     fontSize: 38,
     fontFamily: 'Gordita-Regular',
     color: 'red',
+    marginRight: 10,
   },
   
   adiText: {
-    fontSize: 38, // Adjust the font size as needed
+    fontSize: 38,
     fontFamily: 'Gordita-Bold',
-    color: 'black', // You can change the color as needed
+    color: 'black',
   },
-  
-  
+
   profileIcon: {
     width: 38,
     height: 38,
