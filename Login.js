@@ -6,7 +6,7 @@ const LoginPage = ({ navigation, showFooter }) => {
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to My App</Text>
       <Image
-        source={require('./assets/casual-life-3d-young-couple-sitting-on-the-floor-and-reading-books.png')}
+        source={require('./assets/Saly-16.png')}
         style={styles.image}
       />
       <TouchableOpacity

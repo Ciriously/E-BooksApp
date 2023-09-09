@@ -22,8 +22,8 @@ const tabs = [
   {
     id: '2',
     title: 'Tab 2',
-    leftColor: 'green',
-    rightColor: 'yellow',
+    leftColor: '#DEDFE2',
+    rightColor: '#fff',
     bookTitle: 'Book B',
     authorName: 'Author Y',
     progress: 0.4,
@@ -32,8 +32,8 @@ const tabs = [
   {
     id: '3',
     title: 'Tab 3',
-    leftColor: 'purple',
-    rightColor: 'orange',
+    leftColor: '#F5EABD',
+    rightColor: '#fff',
     bookTitle: 'Book C',
     authorName: 'Author Z',
     progress: 0.2,
@@ -121,6 +121,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 12,
   },
   rightSection: {
     flex: 1,
@@ -149,17 +150,18 @@ const styles = StyleSheet.create({
   },
   continueButton: {
     backgroundColor: 'white',
-    borderColor: 'blue',
+    borderColor: '#404066',
     borderWidth: 1,
-    borderRadius: 12,
+    borderRadius: 8,
     paddingVertical: 5,
     paddingHorizontal: 10,
     marginTop: 10,
     alignItems: 'center',
   },
   continueButtonText: {
-    color: 'red',
+    color: '#404066',
     fontFamily : 'Gordita-Medium', // Use the Gordita Medium font
+    fontSize: 14,
   },
 });
 

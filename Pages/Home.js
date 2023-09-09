@@ -25,19 +25,23 @@ const Home = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.navbar}>
-        <View style={styles.navLeft}>
-          <Text style={styles.goodMorningText}>Good Morning, Adi</Text>
-        </View>
-        <View style={styles.navRight}>
-          <TouchableOpacity onPress={goToProfilePage}>
-            <Image
-              source={require('../assets/icon2.png')}
-              style={styles.profileIcon}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
+<View style={styles.navbar}>
+  <View style={styles.navLeft}>
+    <Text style={styles.goodMorningText}>Hello,</Text>
+    <Text style={styles.adiText}>Adi!</Text>
+  </View>
+  <View style={styles.navRight}>
+    <TouchableOpacity onPress={goToProfilePage}>
+      <Image
+        source={require('../assets/icon2.png')}
+        style={styles.profileIcon}
+      />
+    </TouchableOpacity>
+  </View>
+</View>
+
+
+
 
       <View style={styles.searchBar}>
         <TextInput
@@ -86,9 +90,17 @@ const styles = StyleSheet.create({
   },
   goodMorningText: {
     fontSize: 38,
-    fontFamily: 'Gordita-Bold',
+    fontFamily: 'Gordita-Regular',
     color: 'red',
   },
+  
+  adiText: {
+    fontSize: 38, // Adjust the font size as needed
+    fontFamily: 'Gordita-Bold',
+    color: 'black', // You can change the color as needed
+  },
+  
+  
   profileIcon: {
     width: 38,
     height: 38,
