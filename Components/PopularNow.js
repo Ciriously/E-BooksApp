@@ -5,9 +5,9 @@ const data = {
   "Best Sellers": [
     {
       id: '1',
-      title: 'Book 1',
-      author: 'Author 1',
-      imageUrl: require('../assets/Images/1.png'),
+      title: 'if You Could See the Sun',
+      author: 'Ann liang',
+      imageUrl: require('../assets/Books/Fiction/8.jpg'),
     },
     {
       id: '2',
@@ -16,19 +16,65 @@ const data = {
       imageUrl: require('../assets/Images/2.png'),
     },
   ],
-  "Mystery": [
+  'fiction': [
     {
       id: '3',
       title: 'Book 3',
       author: 'Author 3',
-      imageUrl: require('../assets/Images/3.png'),
+      imageUrl: require('../assets/Books/Fiction/1.jpg'),
     },
     {
       id: '4',
       title: 'Book 4',
       author: 'Author 4',
-      imageUrl: require('../assets/Images/4.png'),
+      imageUrl: require('../assets/Books/Fiction/2.jpg'),
     },
+
+    {
+      id: '5',
+      title: 'Book 4',
+      author: 'Author 4',
+      imageUrl: require('../assets/Books/Fiction/3.jpg'),
+    },
+
+    {
+      id: '6',
+      title: ' 4',
+      author: 'Author 4',
+      imageUrl: require('../assets/Books/Fiction/4.jpg'),
+    },
+
+    {
+      id: '7',
+      title: 'Book 4',
+      author: 'Author 4',
+      imageUrl: require('../assets/Books/Fiction/5.jpg'),
+    },
+
+    {
+      id: '8',
+      title: 'Book 4',
+      author: 'Author 4',
+      imageUrl: require('../assets/Books/Fiction/6.jpg'),
+    },
+
+    {
+      id: '9',
+      title: 'Book 4',
+      author: 'Author 4',
+      imageUrl: require('../assets/Books/Fiction/7.jpg'),
+    },
+
+
+    {
+      id: '10',
+      title: 'Book 4',
+      author: 'Author 4',
+      imageUrl: require('../assets/Books/Fiction/8.jpg'),
+    },
+
+
+
   ],
   "Science Fiction": [
     {
@@ -53,10 +99,13 @@ const PopularNow = () => {
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
       <Image source={item.imageUrl} style={styles.bookImage} />
-      <Text style={styles.bookTitle}>{item.title}</Text>
+      <View style={styles.bookTitleContainer}>
+        <Text style={styles.bookTitle}>{item.title}</Text>
+      </View>
       <Text style={styles.bookAuthor}>{item.author}</Text>
     </View>
   );
+  
 
   const renderSection = (category) => {
     const sectionData = data[category];
@@ -161,12 +210,20 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginLeft: 10,
   },
-  bookTitle: {
-    marginTop: 5,
-    fontFamily: 'Gordita-Bold',
-    fontSize: 16,
-    marginLeft: 10,
-  },
+ bookTitleContainer: {
+  flexWrap: 'wrap',
+  width: 100, // Set a specific width for the container
+  marginLeft: 10,
+},
+bookTitle: {
+  fontFamily: 'Gordita-Bold',
+  fontSize: 14,
+  marginTop: 5,
+  marginLeft: 1,
+  maxWidth: 120, // Set a maximum width for the text
+},
+
+
   bookAuthor: {
     fontFamily: 'Gordita-Regular',
     fontSize: 14,

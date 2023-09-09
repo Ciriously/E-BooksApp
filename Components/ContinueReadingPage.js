@@ -65,7 +65,7 @@ const TabList = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Continue Reading Page</Text>
+      <Text style={styles.title}>Continue Reading</Text>
       <FlatList
         data={tabs}
         horizontal={true}
