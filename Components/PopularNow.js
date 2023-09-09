@@ -10,10 +10,26 @@ const data = {
       imageUrl: require('../assets/Books/Fiction/8.jpg'),
     },
     {
-      id: '2',
+      id: '3',
       title: 'Book 2',
       author: 'Author 2',
-      imageUrl: require('../assets/Images/2.png'),
+      imageUrl: require('../assets/Books/1.jpg'),
+    },
+    {
+      id: '4',
+      title: 'Book 2',
+      author: 'Author 2',
+      imageUrl: require('../assets/Books/2.jpg'),
+    },  {
+      id: '5',
+      title: 'Book 2',
+      author: 'Author 2',
+      imageUrl: require('../assets/Books/3.jpg'),
+    },  {
+      id: '6',
+      title: 'Book 2',
+      author: 'Author 2',
+      imageUrl: require('../assets/Books/4.jpg'),
     },
   ],
   'fiction': [
@@ -76,18 +92,18 @@ const data = {
 
 
   ],
-  "Science Fiction": [
+  "Romance": [
     {
       id: '11',
       title: 'Book 5',
       author: 'Author 5',
-      imageUrl: require('../assets/Images/5.png'),
+      imageUrl: require('../assets/Books/Romance/1.jpg'),
     },
     {
       id: '12',
       title: 'Book 6',
       author: 'Author 6',
-      imageUrl: require('../assets/Images/6.png'),
+      imageUrl: require('../assets/Books/Romance/2.jpg'),
     },
   ],
   // Add more sections and books as needed
@@ -160,7 +176,7 @@ const PopularNow = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
-    marginLeft: 10,
+    marginLeft: 0,
     
   },
   title: {

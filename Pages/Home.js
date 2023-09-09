@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingHorizontal: 20,
+    marginTop: 3,
   },
   title: {
     fontFamily: 'Gordita-Bold',
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
   helloText: {
     fontSize: 38,
     fontFamily: 'Gordita-Regular',
-    color: 'red',
+    color: 'black',
     marginRight: 10,
   },
   
@@ -116,11 +117,11 @@ const styles = StyleSheet.create({
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%',
+    width: '95%',
     height: 50,
     paddingHorizontal: 20,
     marginBottom: -200,
-    marginLeft: -10,
+    marginLeft: 8,
     borderRadius: 25,
     shadowColor: 'gray',
     shadowOpacity: 0.5,

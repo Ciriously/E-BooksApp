@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { useFonts } from 'expo-font';
+
+
 
 const Footer = () => {
   const navigation = useNavigation();
+  const [activeTab, setActiveTab] = useState('home');
 
   const handleTabPress = (tabName) => {
-    // Navigate to the corresponding screen when a tab is pressed
+    setActiveTab(tabName);
+
     if (tabName === 'home') {
       navigation.navigate('Home');
     } else if (tabName === 'bookmarks') {
@@ -21,7 +26,8 @@ const Footer = () => {
       <TabButton
         tabName="home"
         onPress={() => handleTabPress('home')}
-        icon={require('./assets/home.png')} // Add the path to your home icon
+        icon={require('./assets/home.png')}
+        isActive={activeTab === 'home'}
       >
         Home
       </TabButton>
@@ -29,7 +35,8 @@ const Footer = () => {
       <TabButton
         tabName="bookmarks"
         onPress={() => handleTabPress('bookmarks')}
-        icon={require('./assets/book.png')} // Add the path to your bookmark icon
+        icon={require('./assets/book.png')}
+        isActive={activeTab === 'bookmarks'}
       >
         Library
       </TabButton>
@@ -37,7 +44,9 @@ const Footer = () => {
       <TabButton
         tabName="profile"
         onPress={() => handleTabPress('profile')}
-        icon={require('./assets/icon2.png')} // Add the path to your profile icon
+        icon={require('./assets/icon2.png')}
+        isActive={activeTab === 'profile'}
+        iconTintColor="blue"
       >
         Profile
       </TabButton>
@@ -45,16 +54,30 @@ const Footer = () => {
   );
 };
 
-const TabButton = ({ tabName, onPress, children, icon }) => (
+const TabButton = ({ tabName, onPress, children, icon, isActive, iconTintColor }) => (
   <TouchableOpacity
-    style={styles.tab}
+    style={isActive ? styles.activeTab : styles.tab}
     onPress={onPress}
   >
     <View style={styles.tabContainer}>
-      <Image source={icon} style={styles.tabIcon} />
-      <Text style={styles.tabText}>
-        {children}
-      </Text>
+      <Image
+        source={icon}
+        style={[
+          styles.tabIcon,
+          isActive && styles.activeTabIcon,
+        ]}
+        tintColor={isActive ? iconTintColor : undefined}
+      />
+      {isActive && (
+        <Text
+          style={[
+            styles.tabText,
+            isActive && styles.activeTabText,
+          ]}
+        >
+          {children}
+        </Text>
+      )}
     </View>
   </TouchableOpacity>
 );
@@ -64,26 +87,55 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: 'transparent',
-    marginVertical: 10, // Adjust the vertical margin to raise the footer
-    paddingHorizontal: 10,
+    backgroundColor: '#fff',
+    marginVertical: 2,
+    paddingHorizontal: 5,
+    shadowColor: 'pink', // Add shadow color (pink)
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 10,
+    elevation: 5,
   },
   tab: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  activeTab: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    shadowColor: 'pink', // Add shadow color (pink)
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 1,
+    shadowRadius: 10,
+    elevation: 5,
+  },
   tabContainer: {
     alignItems: 'center',
   },
   tabIcon: {
-    width: 24, // Adjust the icon size as needed
-    height: 24, // Adjust the icon size as needed
-    marginBottom: 5, // Adjust the margin between icon and text
+    width: 24,
+    height: 24,
+    marginBottom: 5,
   },
   tabText: {
     color: '#000',
     fontWeight: 'bold',
+  },
+  activeTabIcon: {
+    tintColor: 'red',
+  },
+  activeTabText: {
+    color: 'red',
   },
 });
 
