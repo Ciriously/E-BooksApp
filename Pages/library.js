@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Image,
   ScrollView,
-  Platform,
   TouchableOpacity,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -30,8 +29,15 @@ const NewBookInfo = () => {
 
         {/* Image Container */}
         <View style={styles.imageContainer}>
+          {/* Cover Image */}
           <Image
-            source={require("../assets/Images/4.png")}
+            source={require("../assets/Books/Fiction/8.jpg")} // Replace with your cover image
+            style={styles.coverImage}
+          />
+
+          {/* Book Image */}
+          <Image
+            source={require("../assets/Books/Fiction/8.jpg")} // Replace with your book image
             style={styles.bookImage}
           />
         </View>
@@ -39,14 +45,7 @@ const NewBookInfo = () => {
         {/* Synopsis Container */}
         <View style={styles.synopsisContainer}>
           {/* Info Banner */}
-          <View
-            style={[
-              styles.infoContainer,
-              Platform.OS === "android"
-                ? styles.androidShadow
-                : styles.iosShadow,
-            ]}
-          >
+          <View style={styles.infoContainer}>
             <InfoField value="⭐ 4.5" color="#FFF8E0" />
             <InfoField value="Fantasy" color="#E2FCFB" />
             <InfoField label="432" value=" PGs" color="#fff" />
@@ -85,7 +84,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: "#ccc",
+    backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 40,
@@ -108,26 +107,41 @@ const styles = StyleSheet.create({
     fontSize: 24,
     marginBottom: 10,
     fontFamily: "Gordita-Medium",
+    zIndex: 1,
   },
 
   author: {
     fontSize: 18,
     marginBottom: 10,
     fontFamily: "Gordita-Regular",
+    zIndex: 1,
   },
 
   imageContainer: {
-    width: "70%",
+    width: 450,
+    height: 450,
     aspectRatio: 1,
     borderRadius: 10,
     overflow: "hidden",
-    marginBottom: 10,
+    marginBottom: -80,
+    marginTop: -120,
+  },
+
+  coverImage: {
+    width: "180%", // Adjust the width as needed to stretch wider
+    height: "180%", // Adjust the height as needed to stretch taller
+    resizeMode: "contain", // Stretch the cover image
+    position: "absolute",
+    opacity: 0.2,
+    marginLeft: -120,
   },
 
   bookImage: {
-    width: "100%",
-    height: "100%",
+    width: 150,
+    height: 260,
     resizeMode: "contain",
+    marginLeft: 150,
+    marginTop: 120,
   },
 
   synopsisHeader: {
@@ -168,6 +182,11 @@ const styles = StyleSheet.create({
     height: 50,
     width: "95%",
     zIndex: 1, // Ensure Info banner is above Synopsis
+    shadowColor: "#000", // Shadow color
+    shadowOffset: { width: 0, height: 3 }, // Shadow offset
+    shadowOpacity: 0.3, // Shadow opacity
+    shadowRadius: 4, // Shadow radius
+    elevation: 5, // Android elevation
   },
 
   infoField: {
@@ -194,17 +213,6 @@ const styles = StyleSheet.create({
     fontFamily: "Gordita-Regular",
     color: "#000",
     paddingRight: 1,
-  },
-
-  androidShadow: {
-    elevation: 5,
-  },
-
-  iosShadow: {
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
   },
 });
 
