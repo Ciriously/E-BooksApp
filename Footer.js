@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-
-
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const Footer = () => {
   const navigation = useNavigation();
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTab] = useState("home"); // Initialize the active tab state
 
   const handleTabPress = (tabName) => {
+    // Set the active tab when a tab is pressed
     setActiveTab(tabName);
 
-    if (tabName === 'home') {
-      navigation.navigate('Home');
-    } else if (tabName === 'bookmarks') {
-      navigation.navigate('Bookmarks');
-    } else if (tabName === 'profile') {
-      navigation.navigate('Profile');
+    // Navigate to the corresponding screen
+    if (tabName === "home") {
+      navigation.navigate("Home");
+    } else if (tabName === "bookmarks") {
+      navigation.navigate("Bookmarks");
+    } else if (tabName === "profile") {
+      navigation.navigate("Profile");
     }
   };
 
@@ -25,28 +24,27 @@ const Footer = () => {
     <View style={styles.footer}>
       <TabButton
         tabName="home"
-        onPress={() => handleTabPress('home')}
-        icon={require('./assets/home.png')}
-        isActive={activeTab === 'home'}
+        onPress={() => handleTabPress("home")}
+        icon={require("./assets/home.png")}
+        isActive={activeTab === "home"} // Pass whether it's active as a prop
       >
         Home
       </TabButton>
 
       <TabButton
         tabName="bookmarks"
-        onPress={() => handleTabPress('bookmarks')}
-        icon={require('./assets/book.png')}
-        isActive={activeTab === 'bookmarks'}
+        onPress={() => handleTabPress("bookmarks")}
+        icon={require("./assets/book.png")}
+        isActive={activeTab === "bookmarks"} // Pass whether it's active as a prop
       >
         Library
       </TabButton>
 
       <TabButton
         tabName="profile"
-        onPress={() => handleTabPress('profile')}
-        icon={require('./assets/icon2.png')}
-        isActive={activeTab === 'profile'}
-        iconTintColor="blue"
+        onPress={() => handleTabPress("profile")}
+        icon={require("./assets/icon2.png")}
+        isActive={activeTab === "profile"}
       >
         Profile
       </TabButton>
@@ -54,88 +52,61 @@ const Footer = () => {
   );
 };
 
-const TabButton = ({ tabName, onPress, children, icon, isActive, iconTintColor }) => (
-  <TouchableOpacity
-    style={isActive ? styles.activeTab : styles.tab}
-    onPress={onPress}
-  >
+const TabButton = ({ tabName, onPress, children, icon, isActive }) => (
+  <TouchableOpacity style={styles.tab} onPress={onPress}>
     <View style={styles.tabContainer}>
       <Image
         source={icon}
         style={[
           styles.tabIcon,
-          isActive && styles.activeTabIcon,
+          isActive && styles.activeTabIcon, // Apply active tab icon style conditionally
         ]}
-        tintColor={isActive ? iconTintColor : undefined}
       />
-      {isActive && (
-        <Text
-          style={[
-            styles.tabText,
-            isActive && styles.activeTabText,
-          ]}
-        >
-          {children}
-        </Text>
-      )}
+      <Text
+        style={[
+          styles.tabText,
+          isActive && styles.activeTabText, // Apply active tab text style conditionally
+        ]}
+      >
+        {children}
+      </Text>
     </View>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
   footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-    marginVertical: 2,
-    paddingHorizontal: 5,
-    shadowColor: 'pink', // Add shadow color (pink)
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 5,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "rgba(255, 255, 255, 0.8)", // Use RGBA color with alpha value (0.8 for 80% opacity)
+    marginVertical: 5,
+    paddingHorizontal: 10,
   },
+
   tab: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  activeTab: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 20,
-    shadowColor: 'pink', // Add shadow color (pink)
-    shadowOffset: {
-      width: 0,
-      height: 5,
-    },
-    shadowOpacity: 1,
-    shadowRadius: 10,
-    elevation: 5,
+    alignItems: "center",
+    justifyContent: "center",
   },
   tabContainer: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   tabIcon: {
     width: 24,
     height: 24,
     marginBottom: 5,
+    tintColor: "#000", // Default icon color
   },
   tabText: {
-    color: '#000',
-    fontWeight: 'bold',
+    color: "#000",
+    fontWeight: "bold",
   },
   activeTabIcon: {
-    tintColor: 'red',
+    tintColor: "red", // Change this to the fill color you want
   },
   activeTabText: {
-    color: 'red',
+    color: "red", // Change this to the fill color you want
   },
 });
 
