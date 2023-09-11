@@ -28,7 +28,7 @@ const Footer = () => {
         icon={require("./assets/home.png")}
         isActive={activeTab === "home"} // Pass whether it's active as a prop
       >
-        Home
+        Explore
       </TabButton>
 
       <TabButton
@@ -37,7 +37,7 @@ const Footer = () => {
         icon={require("./assets/book.png")}
         isActive={activeTab === "bookmarks"} // Pass whether it's active as a prop
       >
-        Library
+        Test
       </TabButton>
 
       <TabButton
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 255, 0.8)", // Use RGBA color with alpha value (0.8 for 80% opacity)
+    backgroundColor: "rgba(255, 255, 245, 0.8)", // Use RGBA color with alpha value (0.8 for 80% opacity)
     marginVertical: 5,
     paddingHorizontal: 10,
   },
@@ -100,13 +100,13 @@ const styles = StyleSheet.create({
   },
   tabText: {
     color: "#000",
-    fontWeight: "bold",
+    fontFamily: "Gordita-Medium",
   },
   activeTabIcon: {
-    tintColor: "red", // Change this to the fill color you want
+    tintColor: "pink", // Change this to the fill color you want
   },
   activeTabText: {
-    color: "red", // Change this to the fill color you want
+    color: "pink", // Change this to the fill color you want
   },
 });
 

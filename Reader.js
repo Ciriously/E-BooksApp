@@ -1,5 +1,12 @@
-import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  Dimensions,
+} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import * as Font from "expo-font";
@@ -12,21 +19,51 @@ Font.loadAsync({
   "EBGaramond-Medium": require("../assets/fonts/EBGaramond-Medium.ttf"),
 });
 
+// Import your back arrow image (replace 'backArrow.png' with your actual image file)
+import BackArrowImage from "../assets/back.png";
+
 const Reader = () => {
   const navigation = useNavigation();
 
-  // Sample story with 250 words
+  // Sample story with random text (for demonstration purposes)
   const story = `
-   Mr and Mrs Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal, thank you very much. They were the last people you'd expect to be involved in anything strange or mysterious, because they just didn't hold with such nonsense.
+    Once upon a time, in a land far, far away, there lived a brave knight named Sir Lancelot. He was known throughout the kingdom for his heroic deeds and unwavering courage.
 
-Mr. Dursley was the director of a firm called Grunnings, which made drills. He was a big, beefy man with hardly any neck, although he did have a very large moustache. Mrs. Dursley was thin and blonde and had nearly twice the usual amount of neck, which came in very useful as she spent so much of her time craning over garden fences, spying on the neighbours. The Dursleys had a small son called Dudley and in their opinion there was no finer boy anywhere.
+    One day, a dragon terrorized the land, setting villages ablaze and causing great fear among the people. Sir Lancelot took it upon himself to confront the fearsome beast and save the kingdom.
 
-On his way to work, Vernon Dursley notices strange events: a cat on Privet Drive appears to be reading a map, and people wearing colourful robes are wandering the streets. Mr Dursley attempts to ignore these oddities, but he sees more curiously-clad people during his lunch break. He overhears some mentioning the Potters and their son, Harry; one even stops Mr Dursley, telling him that he must be overjoyed that "You Know Who" is gone. All this reminds Vernon that the Dursleys have a shameful secret and why they pretend the Potters never existed. Arriving home, Mr Dursley hears TV news reports about unforeseen shooting stars and owls flying during the daytime. Previously unwilling to discuss the Potters with his wife, Petunia, he finally verifies that their nephew's name is Harry. Vernon Dursley sleeps uneasily.
+    Armed with his trusty sword and clad in shining armor, Sir Lancelot set out on a perilous journey to find the dragon's lair. Along the way, he encountered challenges, faced dangerous creatures, and made new friends.
 
-Late that night, a mysterious figure appears on Privet Drive. Albus Dumbledore, a wizard, uses an object called a Put-Outer to extinguish all the street lamps. Dumbledore addresses the cat, who transforms into a witch named Professor McGonagall. They discuss how recent celebrations have left "Muggles" inquisitive. Dumbledore confirms that James and Lily Potter were murdered the night before (October 31) by the Dark wizard, Lord Voldemort. He also tried to kill their one-year-old son, Harry, who is somehow involved in causing the Dark Lord's demise. Voldemort is often called "You-Know-Who" by those fearing to speak his name. According to Dumbledore, Harry is being brought to Privet Drive by Hagrid.
+    After many trials and tribulations, Sir Lancelot finally reached the dragon's lair. A fierce battle ensued, with fire and fury on both sides. In the end, Sir Lancelot emerged victorious, having slain the dragon and saved the kingdom.
 
-Soon after, the gigantic Hagrid arrives on a flying motorbike with a snugly wrapped baby tucked into his arm. Dumbledore places the infant on Number Four's doorstep with a letter addressed to Petunia Dursley. McGonagall despairs that baby Harry, an instant celebrity, must spend his childhood with such people. Hagrid re-mounts his motorcycle, McGonagall transforms back into a cat, and Dumbledore re-illuminates the streetlights; all three quietly depart.
+    The people hailed him as a true hero, and his name was celebrated for generations to come. Sir Lancelot's bravery and valor became legendary, and he lived happily ever after.
   `;
+
+  // Calculate the total number of pages (for demonstration purposes, we'll assume 10 words per page)
+  const wordsPerPage = 10;
+  const totalWords = story.split(" ").length;
+  const totalPages = Math.ceil(totalWords / wordsPerPage);
+
+  // Page state and progress calculation
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Text size state
+  const [textSize, setTextSize] = useState(16); // Initial text size (adjust as needed)
+
+  // Calculate the progress percentage
+  const progressPercentage = (currentPage / totalPages) * 100;
+
+  // Function to increase text size
+  const increaseTextSize = () => {
+    setTextSize(textSize + 2); // Increase the text size by 2 units (adjust as needed)
+  };
+
+  // Function to decrease text size
+  const decreaseTextSize = () => {
+    if (textSize > 12) {
+      // Minimum text size (adjust as needed)
+      setTextSize(textSize - 2); // Decrease the text size by 2 units (adjust as needed)
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -36,17 +73,42 @@ Soon after, the gigantic Hagrid arrives on a flying motorbike with a snugly wrap
           onPress={() => navigation.goBack()}
           style={styles.backButton}
         >
-          <Text style={styles.backButtonText}>Back</Text>
+          <Image source={BackArrowImage} style={styles.backButtonImage} />
         </TouchableOpacity>
+        <Text style={styles.title}>The Brave Knight</Text>
+        <View style={styles.textSizeButtons}>
+          <TouchableOpacity onPress={decreaseTextSize}>
+            <Text style={styles.textSizeButton}>A-</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={increaseTextSize}>
+            <Text style={styles.textSizeButton}>A+</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-
-      {/* Title Text */}
-      <Text style={styles.title}>The Boy Who Lived</Text>
 
       {/* Story */}
       <ScrollView style={styles.storyContainer}>
-        <Text style={styles.storyText}>{story}</Text>
+        <Text style={{ ...styles.storyText, fontSize: textSize }}>{story}</Text>
       </ScrollView>
+
+      {/* Footer */}
+      <View style={styles.footer}>
+        <View style={styles.footerLeft}>
+          <Text style={styles.chapterText}>Chapter 1</Text>
+          <Text style={styles.titleText}>The Adventure Begins</Text>
+        </View>
+        <View style={styles.footerRight}>
+          <Text style={styles.pageInfo}>Page {currentPage}</Text>
+          <View style={styles.progressBarContainer}>
+            <View
+              style={[
+                styles.progressBar,
+                { width: `${progressPercentage}%`, backgroundColor: "pink" },
+              ]}
+            ></View>
+          </View>
+        </View>
+      </View>
     </View>
   );
 };
@@ -65,25 +127,76 @@ const styles = StyleSheet.create({
   },
   backButton: {
     paddingHorizontal: 8,
+    marginLeft: -18, // Adjust the margin as needed
+    marginTop: 20, // Adjust the margin as needed
   },
-  backButtonText: {
-    color: "#007AFF",
-    fontSize: 18,
+  backButtonImage: {
+    width: 24,
+    height: 24,
+    resizeMode: "contain", // Adjust the resizeMode as needed
   },
   title: {
-    fontSize: 32,
-    marginTop: 16,
+    fontSize: 24,
+    marginTop: 18,
     fontFamily: "EBGaramond-Bold",
-    marginLeft: 60,
+    marginLeft: 12, // Adjust the margin as needed
   },
   storyContainer: {
     marginTop: 16,
     flex: 1,
   },
   storyText: {
-    fontSize: 16,
     lineHeight: 24,
     fontFamily: "EBGaramond-Regular",
+  },
+  footer: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    marginTop: 16,
+    paddingHorizontal: 5,
+    paddingBottom: 16,
+    backgroundColor: "#EEEDF9A6",
+  },
+  footerLeft: {
+    flex: 1,
+  },
+  chapterText: {
+    fontSize: 18,
+    fontFamily: "EBGaramond-Bold",
+  },
+  titleText: {
+    fontSize: 14,
+    fontFamily: "EBGaramond-Regular",
+    color: "#7E7D8C",
+  },
+  footerRight: {
+    alignItems: "flex-end",
+  },
+  pageInfo: {
+    fontSize: 16,
+    fontFamily: "Gordita-Medium",
+    marginTop: 1,
+  },
+  progressBarContainer: {
+    height: 4,
+    width: Dimensions.get("window").width * 0.3, // Adjust the width as needed
+    backgroundColor: "#ddd",
+    borderRadius: 5,
+    marginTop: 10,
+  },
+  progressBar: {
+    height: 4,
+    borderRadius: 5,
+  },
+  textSizeButtons: {
+    flexDirection: "row",
+    marginLeft: "auto", // Push the buttons to the right side of the header
+    marginTop: 18, // Adjust the margin as needed
+  },
+  textSizeButton: {
+    fontSize: 18,
+    marginHorizontal: 1,
   },
 });
 

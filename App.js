@@ -34,7 +34,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
-      {/* <Footer /> */}
+      <Footer />
     </NavigationContainer>
   );
 }
