@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity ,ImageBackground } from 'react-native';
-import { useFonts } from 'expo-font';
-import { ScrollView } from 'react-native-gesture-handler';
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
+import { useFonts } from "expo-font";
+import { ScrollView } from "react-native-gesture-handler";
 
 const Profile = () => {
   const [fontsLoaded] = useFonts({
-    'Gordita-Regular': require('../assets/fonts/Gordita-Regular.ttf'),
-    'Gordita-Bold': require('../assets/fonts/Gordita-Bold.ttf'),
+    "Gordita-Regular": require("../assets/fonts/Gordita-Regular.ttf"),
+    "Gordita-Bold": require("../assets/fonts/Gordita-Bold.ttf"),
   });
 
-  const [activeTab, setActiveTab] = useState('BooksILove');
+  const [activeTab, setActiveTab] = useState("BooksILove");
 
   if (!fontsLoaded) {
     return null;
@@ -17,35 +24,71 @@ const Profile = () => {
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case 'BooksILove':
+      case "BooksILove":
         return (
           <GridView
             items={[
-              { title: 'Book 1', author: 'Author A', image: require('../assets/Images/1.png') },
-              { title: 'Book 2', author: 'Author B', image: require('../assets/Images/1.png') },
-              { title: 'Book 3', author: 'Author C', image: require('../assets/Images/1.png') },
+              {
+                title: "Book 1",
+                author: "Author A",
+                image: require("../assets/Images/1.png"),
+              },
+              {
+                title: "Book 2",
+                author: "Author B",
+                image: require("../assets/Images/1.png"),
+              },
+              {
+                title: "Book 3",
+                author: "Author C",
+                image: require("../assets/Images/1.png"),
+              },
               // Add more books as needed
             ]}
           />
         );
-      case 'BooksIveRead':
+      case "BooksIveRead":
         return (
           <GridView
             items={[
-              { title: 'Book A', author: 'Author X', image: require('../assets/Images/1.png') },
-              { title: 'Book B', author: 'Author Y', image: require('../assets/Images/1.png') },
-              { title: 'Book C', author: 'Author Z', image: require('../assets/Images/1.png') },
+              {
+                title: "Book A",
+                author: "Author X",
+                image: require("../assets/Images/1.png"),
+              },
+              {
+                title: "Book B",
+                author: "Author Y",
+                image: require("../assets/Images/1.png"),
+              },
+              {
+                title: "Book C",
+                author: "Author Z",
+                image: require("../assets/Images/1.png"),
+              },
               // Add more books as needed
             ]}
           />
         );
-      case 'BooksIWillRead':
+      case "BooksIWillRead":
         return (
           <GridView
             items={[
-              { title: 'Book X', author: 'Author 1', image: require('../assets/Images/1.png') },
-              { title: 'Book Y', author: 'Author 2', image: require('../assets/Images/1.png') },
-              { title: 'Book Z', author: 'Author 3', image: require('../assets/Images/1.png') },
+              {
+                title: "Book X",
+                author: "Author 1",
+                image: require("../assets/Images/1.png"),
+              },
+              {
+                title: "Book Y",
+                author: "Author 2",
+                image: require("../assets/Images/1.png"),
+              },
+              {
+                title: "Book Z",
+                author: "Author 3",
+                image: require("../assets/Images/1.png"),
+              },
               // Add more books as needed
             ]}
           />
@@ -60,7 +103,7 @@ const Profile = () => {
       {/* Cover Picture */}
       <View style={styles.coverPic}>
         <Image
-          source={require('../assets/cover.jpg')}
+          source={require("../assets/cover.jpg")}
           style={styles.coverImage}
         />
       </View>
@@ -69,7 +112,7 @@ const Profile = () => {
         {/* Profile Icon */}
         <View style={styles.profileIconContainer}>
           <Image
-            source={require('../assets/icon2.png')}
+            source={require("../assets/icon2.png")}
             style={styles.profileIcon}
           />
         </View>
@@ -109,18 +152,18 @@ const Profile = () => {
         <View style={styles.tabContainer}>
           <Tab
             title="Books I Love"
-            active={activeTab === 'BooksILove'}
-            onPress={() => setActiveTab('BooksILove')}
+            active={activeTab === "BooksILove"}
+            onPress={() => setActiveTab("BooksILove")}
           />
           <Tab
             title="Books I've Read"
-            active={activeTab === 'BooksIveRead'}
-            onPress={() => setActiveTab('BooksIveRead')}
+            active={activeTab === "BooksIveRead"}
+            onPress={() => setActiveTab("BooksIveRead")}
           />
           <Tab
             title="Books I Will Read"
-            active={activeTab === 'BooksIWillRead'}
-            onPress={() => setActiveTab('BooksIWillRead')}
+            active={activeTab === "BooksIWillRead"}
+            onPress={() => setActiveTab("BooksIWillRead")}
           />
         </View>
 
@@ -136,9 +179,7 @@ const Tab = ({ title, active, onPress }) => (
     style={[styles.tab, active && styles.activeTab]}
     onPress={onPress}
   >
-    <Text style={active ? styles.activeTabText : styles.tabText}>
-      {title}
-    </Text>
+    <Text style={active ? styles.activeTabText : styles.tabText}>{title}</Text>
   </TouchableOpacity>
 );
 
@@ -156,8 +197,6 @@ const GridView = ({ items }) => (
   </View>
 );
 
-
-
 // Modify the GridItem component
 
 const GridItem = ({ title, author, image }) => (
@@ -166,7 +205,7 @@ const GridItem = ({ title, author, image }) => (
       {/* Empty View to maintain height */}
       <View style={{ flex: 1 }} />
     </ImageBackground>
-    
+
     {/* Text Container */}
     <View style={styles.textContainer}>
       <Text style={styles.bookTitle}>{title}</Text>
@@ -177,153 +216,150 @@ const GridItem = ({ title, author, image }) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   coverPic: {
     height: 300,
-    backgroundColor: '#007AFF',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
+    backgroundColor: "#007AFF",
+    alignItems: "center",
+    justifyContent: "center",
   },
   coverImage: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'cover',
+    width: "100%",
+    height: "100%",
+    resizeMode: "cover",
   },
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     borderRadius: 30,
     padding: 20,
-    shadowColor: '#007AFF',
+    shadowColor: "#007AFF",
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.5,
     shadowRadius: 4,
     elevation: 5,
     marginHorizontal: 20,
     marginTop: -50,
-    alignItems: 'center',
+    alignItems: "center",
     height: 250,
   },
   profileIconContainer: {
-    position: 'absolute',
+    position: "absolute",
     top: -75,
-    left: '50%',
-    backgroundColor: '#fff',
+    left: "50%",
+    backgroundColor: "#fff",
     borderRadius: 75,
     width: 130,
     height: 130,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     transform: [{ translateX: -50 }],
   },
-  
+
   profileIcon: {
     width: 120,
     height: 120,
-    resizeMode: 'contain',
-    
+    resizeMode: "contain",
   },
   userName: {
-    fontFamily: 'Gordita-Bold',
+    fontFamily: "Gordita-Bold",
     fontSize: 24,
     marginTop: 40,
     marginBottom: 10,
     marginLeft: 90,
   },
   userBio: {
-    fontFamily: 'Gordita-Regular',
+    fontFamily: "Gordita-Regular",
     fontSize: 16,
-    textAlign: 'center',
+    textAlign: "center",
     paddingHorizontal: 20,
   },
   fieldsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 20,
   },
   field: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   fieldNumber: {
-    fontFamily: 'Gordita-Bold',
+    fontFamily: "Gordita-Bold",
     fontSize: 20,
   },
   fieldText: {
-    fontFamily: 'Gordita-Regular',
+    fontFamily: "Gordita-Regular",
     fontSize: 14,
-    color: '#777',
+    color: "#777",
   },
   profileStats: {
     marginTop: 20,
     paddingHorizontal: 20,
   },
   tabContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginBottom: 10,
   },
   tab: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'transparent', // Make the background transparent
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "transparent", // Make the background transparent
     paddingVertical: 10,
-    borderColor: 'transparent', // Remove border color
+    borderColor: "transparent", // Remove border color
   },
   tabText: {
-    color: '#333',
-    fontWeight: 'bold',
+    color: "#000",
+    fontWeight: "bold",
   },
   activeTab: {
-    borderColor: 'pink',
+    borderColor: "pink",
     borderWidth: 2, // Add a border to the active tab
     borderRadius: 10, // Add border radius to make it square-like
   },
   activeTabText: {
-    color: 'pink',
-    fontWeight: 'bold',
+    color: "pink",
+    fontWeight: "bold",
   },
   gridContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
   },
   gridItem: {
-    width: '48%',
-    backgroundColor: 'transparent', // Set the background to transparent
+    width: "48%",
+    backgroundColor: "transparent", // Set the background to transparent
     borderRadius: 10,
     marginVertical: 10,
   },
   imageContainer: {
-    width: '100%',
+    width: "100%",
     height: 150,
-    overflow: 'hidden',
+    overflow: "hidden",
     borderRadius: 10,
   },
   bookImage: {
-    width: '100%',
-    height: 150,
-    resizeMode: 'cover',
+    width: "100%",
+    height: 280,
+    resizeMode: "contain",
     borderRadius: 10,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   textContainer: {
-    backgroundColor: '#ccc', // Semi-transparent background
+    backgroundColor: "#fff", // Semi-transparent background
     padding: 10,
   },
   bookTitle: {
-    fontFamily: 'Gordita-Bold',
+    fontFamily: "Gordita-Bold",
     fontSize: 16,
     marginVertical: 5,
-    color: '#fff', // Text color for book title
+    color: "#000", // Text color for book title
   },
   bookAuthor: {
-    fontFamily: 'Gordita-Regular',
+    fontFamily: "Gordita-Regular",
     fontSize: 14,
-    color: '#fff', // Text color for author name
+    color: "#000", // Text color for author name
   },
 });
-
 
 export default Profile;
