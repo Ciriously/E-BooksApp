@@ -1,12 +1,11 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import LoginPage from './Login';
-import Home from './Pages/Home';
-import Profile from './Pages/Profile';
-import Bookmarks from './Pages/library'; // Import the Bookmarks screen
-import Footer from './Footer';
-
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import LoginPage from "./Login";
+import Home from "./Pages/Home";
+import Profile from "./Pages/Profile";
+import Bookmarks from "./Pages/library"; // Import the Bookmarks screen
+import Footer from "./Footer";
 
 const Stack = createStackNavigator();
 
@@ -35,7 +34,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
-      <Footer />
+      {/* <Footer /> */}
     </NavigationContainer>
   );
 }
