@@ -168,6 +168,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 14,
     fontFamily: "EBGaramond-Regular",
+    color: "#7E7D8C",
   },
   footerRight: {
     alignItems: "flex-end",
@@ -175,12 +176,14 @@ const styles = StyleSheet.create({
   pageInfo: {
     fontSize: 16,
     fontFamily: "Gordita-Medium",
+    marginTop: 1,
   },
   progressBarContainer: {
     height: 4,
     width: Dimensions.get("window").width * 0.3, // Adjust the width as needed
     backgroundColor: "#ddd",
     borderRadius: 5,
+    marginTop: 10,
   },
   progressBar: {
     height: 4,
