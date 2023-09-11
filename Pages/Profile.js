@@ -31,17 +31,17 @@ const Profile = () => {
               {
                 title: "Book 1",
                 author: "Author A",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/Fiction/1.jpg"),
               },
               {
                 title: "Book 2",
                 author: "Author B",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/Romance/1.jpg"),
               },
               {
                 title: "Book 3",
                 author: "Author C",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/mystery/0.jpg"),
               },
               // Add more books as needed
             ]}
@@ -54,17 +54,17 @@ const Profile = () => {
               {
                 title: "Book A",
                 author: "Author X",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/Fiction/1.jpg"),
               },
               {
                 title: "Book B",
                 author: "Author Y",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/Fiction/8.jpg"),
               },
               {
                 title: "Book C",
                 author: "Author Z",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/Fiction/5.jpg"),
               },
               // Add more books as needed
             ]}
@@ -77,17 +77,22 @@ const Profile = () => {
               {
                 title: "Book X",
                 author: "Author 1",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/mystery/1.jpg"),
               },
               {
                 title: "Book Y",
                 author: "Author 2",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/mystery/2.jpg"),
               },
               {
                 title: "Book Z",
                 author: "Author 3",
-                image: require("../assets/Images/1.png"),
+                image: require("../assets/Books/1.jpg"),
+              },
+              {
+                title: "Book Z",
+                author: "Author 3",
+                image: require("../assets/Books/3.jpg"),
               },
               // Add more books as needed
             ]}
