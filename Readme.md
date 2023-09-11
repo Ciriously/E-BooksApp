@@ -1,6 +1,6 @@
 # To Do
 
-<img alt="React Native " src="./assets/homepage.png"/>
+<img alt="React Native " src="./assets/screenshots/screens.svg"/>
 
 ## add Hd books cover
 

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import * as Font from "expo-font";
 
 const Footer = () => {
+  Font.loadAsync({
+    "Gordita-Medium": require("./assets/fonts/Gordita-Medium.ttf"),
+    // Add more fonts if needed
+  });
   const navigation = useNavigation();
   const [activeTab, setActiveTab] = useState("home"); // Initialize the active tab state
 
@@ -34,16 +39,16 @@ const Footer = () => {
       <TabButton
         tabName="bookmarks"
         onPress={() => handleTabPress("bookmarks")}
-        icon={require("./assets/book.png")}
+        icon={require("./assets/ribbon.png")}
         isActive={activeTab === "bookmarks"} // Pass whether it's active as a prop
       >
-        Test
+        My Library
       </TabButton>
 
       <TabButton
         tabName="profile"
         onPress={() => handleTabPress("profile")}
-        icon={require("./assets/icon2.png")}
+        icon={require("./assets/user.png")}
         isActive={activeTab === "profile"}
       >
         Profile
@@ -79,9 +84,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "rgba(255, 255, 245, 0.8)", // Use RGBA color with alpha value (0.8 for 80% opacity)
-    marginVertical: 5,
+    backgroundColor: "#F7F9F9", // Use RGBA color with alpha value (0.8 for 80% opacity)
+    marginVertical: 1,
     paddingHorizontal: 10,
+    height: 55,
   },
 
   tab: {
@@ -93,20 +99,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   tabIcon: {
-    width: 24,
-    height: 24,
+    width: 20,
+    height: 20,
     marginBottom: 5,
-    tintColor: "#000", // Default icon color
+    tintColor: "gray", // Default icon color
   },
   tabText: {
     color: "#000",
     fontFamily: "Gordita-Medium",
+    color: "gray", // Default text color
   },
   activeTabIcon: {
-    tintColor: "pink", // Change this to the fill color you want
+    tintColor: "#FF69B4", // Change this to the fill color you want
   },
   activeTabText: {
-    color: "pink", // Change this to the fill color you want
+    color: "#FF69B4", // Change this to the fill color you want
   },
 });
 
