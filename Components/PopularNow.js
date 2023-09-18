@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const data = {
   "Best Sellers": [
@@ -116,16 +117,20 @@ const data = {
 };
 
 const PopularNow = () => {
-  const [activeCategory, setActiveCategory] = useState("Popular Now");
+  const [activeCategory, setActiveCategory] = useState("Best Sellers");
+  const navigation = useNavigation();
 
   const renderItem = ({ item }) => (
-    <View style={styles.itemContainer}>
+    <TouchableOpacity
+      style={styles.itemContainer}
+      onPress={() => navigateToBookInfo(item)}
+    >
       <Image source={item.imageUrl} style={styles.bookImage} />
       <View style={styles.bookTitleContainer}>
         <Text style={styles.bookTitle}>{item.title}</Text>
       </View>
       <Text style={styles.bookAuthor}>{item.author}</Text>
-    </View>
+    </TouchableOpacity>
   );
 
   const renderSection = (category) => {
@@ -143,6 +148,10 @@ const PopularNow = () => {
         />
       </View>
     );
+  };
+
+  const navigateToBookInfo = (book) => {
+    navigation.navigate("NewBookInfo", { book });
   };
 
   return (
@@ -177,7 +186,6 @@ const PopularNow = () => {
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,

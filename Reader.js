@@ -13,14 +13,14 @@ import * as Font from "expo-font";
 
 // Load custom fonts
 Font.loadAsync({
-  "EBGaramond-Bold": require("../assets/fonts/EBGaramond-Bold.ttf"),
-  "EBGaramond-Regular": require("../assets/fonts/EBGaramond-Regular.ttf"),
-  "EBGaramond-Italic": require("../assets/fonts/EBGaramond-Italic.ttf"),
-  "EBGaramond-Medium": require("../assets/fonts/EBGaramond-Medium.ttf"),
+  "EBGaramond-Bold": require("./assets/fonts/EBGaramond-Bold.ttf"),
+  "EBGaramond-Regular": require("./assets/fonts/EBGaramond-Regular.ttf"),
+  "EBGaramond-Italic": require("./assets/fonts/EBGaramond-Italic.ttf"),
+  "EBGaramond-Medium": require("./assets/fonts/EBGaramond-Medium.ttf"),
 });
 
 // Import your back arrow image (replace 'backArrow.png' with your actual image file)
-import BackArrowImage from "../assets/back.png";
+import BackArrowImage from "./assets/back.png";
 
 const Reader = () => {
   const navigation = useNavigation();

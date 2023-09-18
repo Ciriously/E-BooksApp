@@ -8,7 +8,7 @@ import {
   ProgressBarAndroid,
   Image,
 } from "react-native";
-import { useFonts } from "expo-font"; // Import useFonts from expo-font
+import { useNavigation } from "@react-navigation/native";
 
 // Import local images
 const book1Image = require("../assets/Books/Romance/1.jpg");
@@ -61,16 +61,12 @@ const tabs = [
 ];
 
 const TabList = () => {
-  const [fontsLoaded] = useFonts({
-    "Gordita-Bold": require("../assets/fonts/Gordita-Bold.ttf"), // Load the Gordita Bold font
-    "Gordita-Medium": require("../assets/fonts/Gordita-Medium.ttf"),
-    "Gordita-Regular": require("../assets/fonts/Gordita-Regular.ttf"), // Load the Gordita Regular font
-  });
+  const navigation = useNavigation();
 
-  // Check if the font is loaded before rendering the component
-  if (!fontsLoaded) {
-    return null; // Render nothing or a loading screen
-  }
+  const handleContinuePress = (item) => {
+    // Navigate to the "Reader" screen and pass the selected item
+    navigation.navigate("Reader", { item });
+  };
 
   return (
     <View style={styles.container}>
@@ -81,7 +77,10 @@ const TabList = () => {
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <TouchableOpacity style={styles.tab}>
+          <TouchableOpacity
+            style={styles.tab}
+            onPress={() => handleContinuePress(item)}
+          >
             <View
               style={[styles.leftSection, { backgroundColor: item.leftColor }]}
             >
@@ -103,7 +102,7 @@ const TabList = () => {
               />
               <TouchableOpacity
                 style={styles.continueButton}
-                onPress={() => console.log("Continue button pressed")}
+                onPress={() => handleContinuePress(item)}
               >
                 <Text style={styles.continueButtonText}>Continue</Text>
               </TouchableOpacity>
@@ -124,7 +123,7 @@ const styles = StyleSheet.create({
     marginLeft: -10,
   },
   title: {
-    fontFamily: "Gordita-Medium", // Use the Gordita Bold font
+    fontFamily: "Gordita-Medium", // Use the Gordita Medium font
     fontSize: 24,
     marginBottom: 10,
     paddingLeft: 10,

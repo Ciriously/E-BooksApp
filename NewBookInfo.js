@@ -31,13 +31,13 @@ const NewBookInfo = () => {
         <View style={styles.imageContainer}>
           {/* Cover Image */}
           <Image
-            source={require("../assets/Books/Fiction/8.jpg")} // Replace with your cover image
+            source={require("./assets/Books/Fiction/8.jpg")} // Replace with your cover image
             style={styles.coverImage}
           />
 
           {/* Book Image */}
           <Image
-            source={require("../assets/Books/Fiction/8.jpg")} // Replace with your book image
+            source={require("./assets/Books/Fiction/8.jpg")} // Replace with your book image
             style={styles.bookImage}
           />
         </View>
