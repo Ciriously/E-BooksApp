@@ -4,10 +4,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import LoginPage from "./Login";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
-import Bookmarks from "./Pages/library";
-import Reader from "./Reader";
+import Bookmarks from "./Pages/library"; // Import the Bookmarks screen
+import Reader from "./Reader"; // Import the Reader screen
 import Footer from "./Footer";
-import NewBookInfo from "./NewBookInfo"; // Import the NewBookInfo screen
 
 const Stack = createStackNavigator();
 
@@ -32,22 +31,17 @@ export default function App() {
         />
         <Stack.Screen
           name="Bookmarks"
-          component={Bookmarks}
+          component={Bookmarks} // Add the Bookmarks screen component
           options={{ headerShown: false }}
         />
+        {/* Add the Reader screen to the stack */}
         <Stack.Screen
           name="Reader"
           component={Reader}
           options={{ headerShown: false }}
         />
-        {/* Add the NewBookInfo screen to the stack */}
-        <Stack.Screen
-          name="NewBookInfo"
-          component={NewBookInfo}
-          options={{ headerShown: false }}
-        />
       </Stack.Navigator>
-      <Footer />
+      {/* <Footer /> */}
     </NavigationContainer>
   );
 }
