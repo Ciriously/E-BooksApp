@@ -32,8 +32,6 @@ But the features don't stop there. Wordy Odyssey also keeps you engaged with its
 
 And that's not all; Wordy Odyssey is continually evolving, with more exciting features on the horizon. Stay tuned for updates that will enhance your reading experience, making Wordy Odyssey your go-to app for all things literary. Whether you're a casual reader or a devoted bookworm, Wordy Odyssey is your companion on this word-filled odyssey.
 
-_**Link to test card payment details provided by Stripe**_ 👉&nbsp; https://stripe.com/docs/testing#cards
-
 ## :eyes: Preview
 
 <p>
@@ -111,4 +109,4 @@ Wordy Odyssey is your one-stop destination for everything related to books, offe
 
 # :closed_book:
 
-Made with 💖 by [**Aditya Mishra**](https://github.com/Ciriously) 🚀
+Made with 💖 by [**Aditya Mishra**](https://www.linkedin.com/in/adityad12/) 🚀
