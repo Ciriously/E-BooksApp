@@ -27,7 +27,7 @@ const Onboarding = ({ navigation }) => {
       {/* Slide 1 */}
       <View style={styles.slide}>
         <Image
-          source={require("../assets/Saly-16.png")}
+          source={require("../assets/slide1.jpg")}
           style={styles.backgroundImage}
         />
         <View style={styles.textContainer}>
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     position: "absolute",
-    right: 10,
+    // right: 10,
   },
   textContainer: {
     alignItems: "center",
