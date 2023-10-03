@@ -13,7 +13,7 @@
 </h1>
 
 <div align="center">
-  <img src="/assets/logo.png" alt="App brand icon" />
+  <img src="/assets/logo.png" alt="App brand icon" width = "250"  />
 </div>
 
 <br />
