@@ -1,4 +1,4 @@
-<p align="center">
+<!-- <p align="center">
   <a href="#calling-about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#eyes-preview">Preview</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#gear-core-tech-stack">Tech Stack</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -6,17 +6,15 @@
   <a href="#camera_flash-screenshots">Screenshots</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-license-">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#warning-disclaimer">Disclaimer</a>
-</p>
+</p> -->
 
 <h1 align="center">
-  🍉 <em>YumMeals</em>
+ 📖🖼 <em>Wordy Odyssey </em>
 </h1>
 
 <div align="center">
   <img src="/assets/logo.png" alt="App brand icon" />
 </div>
-
-<p align="center">Icons made by <a href="https://www.flaticon.com/authors/freepik">Freepik</a></p>
 
 <br />
 
@@ -37,6 +35,14 @@ And that's not all; Wordy Odyssey is continually evolving, with more exciting fe
 _**Link to test card payment details provided by Stripe**_ 👉&nbsp; https://stripe.com/docs/testing#cards
 
 ## :eyes: Preview
+
+<p>
+    <img src="./assets/screenshots/Rectangle(4).png" width="250">
+   <img src="./assets/screenshots/Rectangle(2).png" width="250">
+   <img src="./assets/screenshots/Rectangle(1).png" width="250">
+   <img src="./assets/screenshots/Rectangle(3).png" width="250">
+   <img src="./assets/screenshots/Rectangle.png" width="250">
+</p>
 
 ## :gear: Core Tech Stack
 
@@ -103,21 +109,6 @@ Wordy Odyssey offers a comprehensive set of features designed to cater to book e
 
 Wordy Odyssey is your one-stop destination for everything related to books, offering a vibrant and engaging platform for readers of all interests and levels.
 
-## :camera_flash: Screenshots
+# :closed_book:
 
-<p>
-    <img src="./assets/screenshots/app-preview-1.gif" width="250">
-    <img src="./assets/screenshots/app-preview-map.png" width="250">
-    <img src="./assets/screenshots/app-preview-2.gif" width="250">
-    <img src="./assets/screenshots/app-preview-restaurant-menu.png" width="250">
-    <img src="./assets/screenshots/app-preview-3.gif" width="250">
-    <img src="./assets/screenshots/app-preview-user-settings.png" width="250">
-</p>
-
-## :memo: License <a aria-label="YumMeals is free to use" href="https://choosealicense.com/licenses/mit/" target="_blank"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-success.svg?style=flat-square&color=33CC12" target="_blank" /></a>
-
-This project is under the terms of the MIT license. For more information, please refer to the license [documentation](LICENSE.md).
-
-## :warning: Disclaimer
-
-The contents of these pages are provided as an information guide only. While every effort is made in preparing the material for publication, no responsibility is accepted by or on behalf of the owner(s) for any errors, omissions or misleading statements on these pages or any site to which these pages connect. Although every effort is made to ensure the reliability of listed sites this cannot be taken as an endorsement of these sites.
+Made with 💖 by [**Aditya Mishra**](https://github.com/Ciriously) 🚀
