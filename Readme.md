@@ -37,10 +37,10 @@ _**Link to test card payment details provided by Stripe**_ 👉&nbsp; https://st
 ## :eyes: Preview
 
 <p>
-    <img src="./assets/screenshots/Rectangle(4).png" width="250">
-   <img src="./assets/screenshots/Rectangle(2).png" width="250">
-   <img src="./assets/screenshots/Rectangle(1).png" width="250">
-   <img src="./assets/screenshots/Rectangle(3).png" width="250">
+    <img src="./assets/screenshots/Rectangle (4).png" width="250">
+   <img src="./assets/screenshots/Rectangle (2).png" width="250">
+   <img src="./assets/screenshots/Rectangle (1).png" width="250">
+   <img src="./assets/screenshots/Rectangle (3).png" width="250">
    <img src="./assets/screenshots/Rectangle.png" width="250">
 </p>
 
