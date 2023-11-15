@@ -40,7 +40,7 @@ const Onboarding = ({ navigation }) => {
 
   return (
     <Swiper
-      loop={false}
+      loop={true}
       showsPagination={true}
       dot={<View style={styles.dot} />}
       activeDot={<View style={styles.activeDot} />}
@@ -59,7 +59,7 @@ const Onboarding = ({ navigation }) => {
             magical odyssey of imagination and discovery.
           </Text>
         </View>
-        <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
+        <TouchableOpacity style={styles.skipButtonTop} onPress={handleSkip}>
           <Text style={styles.skipButtonText}>Skip</Text>
         </TouchableOpacity>
       </View>
@@ -79,7 +79,7 @@ const Onboarding = ({ navigation }) => {
             settings. Your reading haven awaits!
           </Text>
         </View>
-        <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
+        <TouchableOpacity style={styles.skipButtonTop} onPress={handleSkip}>
           <Text style={styles.skipButtonText}>Skip</Text>
         </TouchableOpacity>
       </View>
@@ -98,7 +98,7 @@ const Onboarding = ({ navigation }) => {
             Odyssey is not just an app; it's a social hub for the love of words.
           </Text>
         </View>
-        <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
+        <TouchableOpacity style={styles.skipButtonTop} onPress={handleSkip}>
           <Text style={styles.skipButtonText}>Skip</Text>
         </TouchableOpacity>
       </View>
@@ -123,9 +123,6 @@ const Onboarding = ({ navigation }) => {
             <Text style={styles.getStartedButtonText}>Get Started</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
-          <Text style={styles.skipButtonText}>Skip</Text>
-        </TouchableOpacity>
       </View>
     </Swiper>
   );
@@ -209,33 +206,43 @@ const styles = StyleSheet.create({
     bottom: 20,
     right: 20,
     zIndex: 1,
-    fontFamily: "Inter-Bold",
+  },
+  skipButtonTop: {
+    position: "absolute",
+    top: 30,
+    right: 20,
+    zIndex: 1,
   },
   skipButtonText: {
     color: "#000",
     fontSize: 16,
+    fontFamily: "Gordita-Regular",
   },
   getStartedButton: {
     marginTop: 10,
     fontSize: 18,
+    width: 200,
+    height: 50,
     top: 90,
     backgroundColor: "#FF69B4",
     padding: 10,
     borderRadius: 15,
-    fontFamily: "Gordita-Bold",
   },
   getStartedButtonText: {
     color: "#fff",
+    fontFamily: "Inter-Bold",
+    textAlign: "center",
+    fontSize: 18,
   },
   dot: {
     width: 8,
     height: 8,
     borderRadius: 4,
     margin: 3,
-    backgroundColor: "#fff",
+    backgroundColor: "darkgray",
   },
   activeDot: {
-    width: 12,
+    width: 17,
     height: 12,
     borderRadius: 6,
     margin: 3,

@@ -52,7 +52,7 @@ const tabs = [
     id: "4",
     title: "Tab 4",
     leftColor: "pink",
-    rightColor: "brown",
+    rightColor: "#fff",
     bookTitle: "Book D",
     authorName: "Author W",
     progress: 0.9,
