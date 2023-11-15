@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import Swiper from "react-native-swiper";
-import * as Font from "expo-font"; // Import expo-font
+import * as Font from "expo-font";
 
 // Load custom fonts
 Font.loadAsync({
@@ -44,11 +44,10 @@ const Onboarding = ({ navigation }) => {
         <Image
           source={require("../assets/slide2.jpg")}
           style={styles.backgroundImage}
-          slide3
         />
         <View style={styles.textContainer}>
-          <Text style={styles.title}>Explore Features</Text>
-          <Text style={styles.description}>This is slide 2</Text>
+          <Text style={styles.title2}>Explore Features</Text>
+          <Text style={styles.description2}>This is slide 2</Text>
         </View>
       </View>
 
@@ -59,18 +58,17 @@ const Onboarding = ({ navigation }) => {
           style={styles.backgroundImage}
         />
         <View style={styles.textContainer}>
-          <Text style={styles.title}>Get Started</Text>
-          <Text style={styles.description}>This is slide 3</Text>
+          <Text style={styles.title3}>Get Started</Text>
+          <Text style={styles.description3}>This is slide 3</Text>
           <TouchableOpacity style={styles.finishButton} onPress={handleFinish}>
             <Text>Finish</Text>
           </TouchableOpacity>
+          {/* Skip Button inside the third screen */}
+          <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
+            <Text style={styles.skipButtonText}>Skip</Text>
+          </TouchableOpacity>
         </View>
       </View>
-
-      {/* Skip Button */}
-      <TouchableOpacity style={styles.skipButton} onPress={handleSkip}>
-        <Text style={styles.skipButtonText}>Skip</Text>
-      </TouchableOpacity>
     </Swiper>
   );
 };
@@ -85,11 +83,10 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     position: "absolute",
-    // right: 10,
   },
   textContainer: {
     alignItems: "center",
-    backgroundColor: "rgba(0,0,0,0.0)", // Semi-transparent background for text (adjust the alpha value)
+    backgroundColor: "rgba(0,0,0,0.0)",
     padding: 20,
     borderRadius: 10,
     top: "30%",
@@ -98,13 +95,31 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: "Gordita-Bold",
     marginBottom: 20,
-    color: "#fff", // Text color
+    color: "#fff",
   },
   description: {
     fontSize: 16,
     textAlign: "center",
     fontFamily: "Gordita-Regular",
-    color: "#fff", // Text color
+    color: "#fff",
+  },
+  title2: {
+    fontSize: 24,
+    fontFamily: "Gordita-Bold",
+    marginBottom: 20,
+    color: "#fff",
+  },
+  description2: {
+    fontSize: 16,
+    textAlign: "center",
+    fontFamily: "Gordita-Regular",
+    color: "#fff",
+  },
+  title3: {
+    // Add styles for slide 3 title
+  },
+  description3: {
+    // Add styles for slide 3 description
   },
   finishButton: {
     marginTop: 20,
@@ -119,10 +134,10 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, 0.7)",
     padding: 10,
     borderRadius: 5,
-    zIndex: 1, // Ensure the button is above other elements
+    zIndex: 1,
   },
   skipButtonText: {
-    color: "#000", // Update the text color to black
+    color: "#000",
   },
 });
 
