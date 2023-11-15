@@ -1,22 +1,23 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import LoginPage from "./Login";
+import Onboarding from "./Pages/Onboarding";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
-import Bookmarks from "./Pages/library"; // Import the Bookmarks screen
-import Reader from "./Reader"; // Import the Reader screen
+import Bookmarks from "./Pages/library";
+import Reader from "./Reader";
 import Footer from "./Footer";
+import Login from "./Login"; // Import the Login screen
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Onboarding">
         <Stack.Screen
-          name="Login"
-          component={LoginPage}
+          name="Onboarding"
+          component={Onboarding}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -31,13 +32,17 @@ export default function App() {
         />
         <Stack.Screen
           name="Bookmarks"
-          component={Bookmarks} // Add the Bookmarks screen component
+          component={Bookmarks}
           options={{ headerShown: false }}
         />
-        {/* Add the Reader screen to the stack */}
         <Stack.Screen
           name="Reader"
           component={Reader}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Login" // Add the 'Login' screen
+          component={Login}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

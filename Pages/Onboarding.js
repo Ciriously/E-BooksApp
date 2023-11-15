@@ -23,24 +23,18 @@ const Onboarding = ({ navigation }) => {
     return null; // Render nothing while fonts are loading
   }
 
-  const handleFinish = () => {
-    // Navigate to the next screen (e.g., Home) after onboarding
-    navigation.navigate("Home");
-  };
-
   const handleSkip = () => {
     // Navigate to the next screen (e.g., Home) directly
     navigation.navigate("Home");
   };
 
   const handleGetStarted = () => {
-    // Navigate to the next screen (e.g., Home) after onboarding
     navigation.navigate("Login");
   };
 
   return (
     <Swiper
-      loop={false}
+      loop={true}
       showsPagination={true}
       dot={<View style={styles.dot} />}
       activeDot={<View style={styles.activeDot} />}
@@ -209,7 +203,7 @@ const styles = StyleSheet.create({
   },
   skipButtonTop: {
     position: "absolute",
-    top: 20,
+    top: 30,
     right: 20,
     zIndex: 1,
   },
@@ -239,10 +233,10 @@ const styles = StyleSheet.create({
     height: 8,
     borderRadius: 4,
     margin: 3,
-    backgroundColor: "#fff",
+    backgroundColor: "darkgray",
   },
   activeDot: {
-    width: 12,
+    width: 17,
     height: 12,
     borderRadius: 6,
     margin: 3,
