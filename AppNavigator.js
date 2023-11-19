@@ -10,6 +10,7 @@ import Footer from "./Footer";
 import Login from "./Pages/Login";
 import NewBookInfo from "./Components/NewBookInfo";
 import Register from "./Pages/Register";
+import SignIn from "./Pages/SignIn";
 
 const Stack = createStackNavigator();
 
@@ -50,6 +51,11 @@ const AppNavigator = () => {
         <Stack.Screen
           name="Login"
           component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SignIn"
+          component={SignIn}
           options={{ headerShown: false }}
         />
         <Stack.Screen

@@ -19,7 +19,7 @@ const Onboarding = ({ navigation }) => {
 
   const handleFinish = () => {
     // Navigate to the next screen (e.g., Home) after onboarding
-    navigation.navigate("Home");
+    navigation.navigate("SignIn");
   };
 
   const handleLogin = () => {
@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: "poppins-ExtraBold",
     marginBottom: 10,
+    color: "#6F00FF",
   },
   descriptionText: {
     fontSize: 16,
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginHorizontal: 20,
     marginBottom: 40,
-    color: "gray", // Adjust color as needed
+    color: "#72A0C1", // Adjust color as needed
   },
   button: {
     width: "80%", // Set the width to 80% of the container
@@ -126,10 +127,10 @@ const styles = StyleSheet.create({
     marginBottom: 10, // Add margin between buttons
   },
   finishButton: {
-    backgroundColor: "blue",
+    backgroundColor: "#6F00FF",
     padding: 10,
     borderWidth: 1, // Add border
-    borderColor: "blue", // Border color
+    borderColor: "#6F00FF", // Border color
     alignItems: "center",
   },
   finishButtonText: {
@@ -141,10 +142,10 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     padding: 10,
     borderWidth: 1,
-    borderColor: "blue",
+    borderColor: "#6F00FF",
   },
   loginButtonText: {
-    color: "blue",
+    color: "#6F00FF",
     fontSize: 16,
     fontFamily: "poppins-SemiBold",
     textAlign: "center",

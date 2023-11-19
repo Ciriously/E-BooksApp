@@ -1,3 +1,4 @@
+// SignIn.js
 import React from "react";
 import {
   View,
@@ -8,22 +9,25 @@ import {
   Image,
 } from "react-native";
 
-const Register = ({ navigation }) => {
+const SignIn = ({ navigation }) => {
   const handleBack = () => {
     // Handle the back button press
     navigation.goBack();
   };
 
-  const navigateToSignIn = () => {
-    // Navigate to the Sign In page
-    navigation.navigate("SignIn");
+  const navigateToRegister = () => {
+    // Navigate to the Register page
+    navigation.navigate("Register");
   };
 
+  const navigateToHome = () => {
+    // Navigate to the Home page
+    navigation.navigate("Home");
+  };
   return (
     <View style={styles.container}>
       {/* Back Button */}
       <TouchableOpacity style={styles.backButton} onPress={handleBack}>
-        {/* Replace the path with your actual back arrow icon */}
         <Image
           source={require("../assets/arrow.png")}
           style={styles.backIcon}
@@ -32,27 +36,24 @@ const Register = ({ navigation }) => {
 
       <View style={styles.textContainer}>
         {/* Welcome Text */}
-        <Text style={styles.welcomeText}>Welcome!</Text>
+        <Text style={styles.welcomeText}>Welcome Back!</Text>
 
         {/* Description Text */}
         <Text style={styles.descriptionText}>
-          Create an account to unlock a world of words and stories.
+          Sign in to continue your literary journey.
         </Text>
       </View>
 
       {/* Input Container */}
       <View style={styles.inputContainer}>
-        {/* Input Fields */}
-        <TextInput
-          style={[styles.input, styles.inputText]} // Apply inputText style
-          placeholder="Name"
-          underlineColorAndroid="transparent"
-        />
+        {/* Email Input Field */}
         <TextInput
           style={[styles.input, styles.inputText]} // Apply inputText style
           placeholder="Email"
           underlineColorAndroid="transparent"
         />
+
+        {/* Password Input Field */}
         <TextInput
           style={[styles.input, styles.inputText]} // Apply inputText style
           placeholder="Password"
@@ -61,11 +62,10 @@ const Register = ({ navigation }) => {
         />
       </View>
 
-      {/* Signup Button */}
-      <TouchableOpacity style={styles.signupButton}>
-        <Text style={styles.signupButtonText}>Sign up</Text>
+      {/* Login Button */}
+      <TouchableOpacity style={styles.loginButton} onPress={navigateToHome}>
+        <Text style={styles.loginButtonText}>Log in</Text>
       </TouchableOpacity>
-
       {/* Or Separator */}
       <View style={styles.orSeparator}>
         <View style={styles.separatorLine}></View>
@@ -81,11 +81,11 @@ const Register = ({ navigation }) => {
         <Image source={require("../assets/apple.png")} style={styles.icon} />
       </View>
 
-      {/* Already have an account text with Sign In link */}
-      <View style={styles.loginTextContainer}>
-        <Text style={styles.greyText}>Already have an account?</Text>
-        <TouchableOpacity onPress={navigateToSignIn}>
-          <Text style={styles.blueText}>Sign in</Text>
+      {/* Don't have an account text with Sign Up link */}
+      <View style={styles.signupTextContainer}>
+        <Text style={styles.greyText}>Don't have an account?</Text>
+        <TouchableOpacity onPress={navigateToRegister}>
+          <Text style={styles.blueText}>Sign up</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -98,12 +98,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 0,
+    paddingTop: 10,
   },
   backButton: {
     alignSelf: "flex-start",
     padding: 10,
-    marginBottom: 40,
+    marginTop: 0,
+    marginBottom: 80,
   },
   backIcon: {
     width: 20,
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
     fontFamily: "poppins-ExtraBold",
     fontSize: 18,
   },
-  signupButton: {
+  loginButton: {
     backgroundColor: "#6F00FF",
     padding: 10,
     borderRadius: 5,
@@ -156,7 +157,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 15,
   },
-  signupButtonText: {
+  loginButtonText: {
     color: "white",
     fontSize: 16,
     fontFamily: "Gordita-Bold",
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     marginHorizontal: 10,
   },
-  loginTextContainer: {
+  signupTextContainer: {
     flexDirection: "row",
     marginTop: 20,
   },
@@ -204,4 +205,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Register;
+export default SignIn;
