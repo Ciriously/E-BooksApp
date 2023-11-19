@@ -35,9 +35,13 @@ And that's not all; Wordy Odyssey is continually evolving, with more exciting fe
 ## :eyes: Preview
 
 <p>
-    <img src="./assets/screenshots/LoginPage.jpg" width="250">
-   <img src="./assets/screenshots/HomePage.jpg" width="250">
-   <img src="./assets/screenshots/Libraray.jpg" width="250">
+    <p align="center">
+  <img width="450" height="250" src="./assets/screenshots/LoginPage.jpg">
+</p>
+   <p align="center">
+  <img width="350" height="280"src="./assets/screenshots/HomePage.jpg" width="250"></p>
+  <p align="center">
+  <img width="350" height="280"src="./assets/screenshots/Libraray.jpg" width="250"></p>
    <img src="./assets/screenshots/profile.jpg" width="250">
    <img src="./assets/screenshots/Window.jpg" width="250">
 </p>
