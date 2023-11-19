@@ -75,7 +75,7 @@ const Reader = () => {
         >
           <Image source={BackArrowImage} style={styles.backButtonImage} />
         </TouchableOpacity>
-        <Text style={styles.title}>The Brave Knight</Text>
+        <Text style={styles.title}>She Gets the Girl</Text>
         <View style={styles.textSizeButtons}>
           <TouchableOpacity onPress={decreaseTextSize}>
             <Text style={styles.textSizeButton}>A-</Text>
@@ -103,7 +103,7 @@ const Reader = () => {
             <View
               style={[
                 styles.progressBar,
-                { width: `${progressPercentage}%`, backgroundColor: "pink" },
+                { width: `${progressPercentage}%`, backgroundColor: "#6F00FF" },
               ]}
             ></View>
           </View>

@@ -208,12 +208,12 @@ const styles = StyleSheet.create({
     borderRadius: 20, // Add border radius to tabs
   },
   activeTab: {
-    backgroundColor: "lightpink",
+    backgroundColor: "#6F00FF",
     borderRadius: 20, // Add border radius to active tab
   },
   tabText: {
     color: "#000",
-    fontWeight: "medium", // Change to 'medium' for non-active tabs
+    fontFamily: "Gordita-Regular",
   },
   activeTabText: {
     color: "#fff",

@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    backgroundColor: "#F7F9F9", // Use RGBA color with alpha value (0.8 for 80% opacity)
+    backgroundColor: "#fff",
     marginVertical: 1,
     paddingHorizontal: 10,
     height: 55,
@@ -107,13 +107,13 @@ const styles = StyleSheet.create({
   tabText: {
     color: "#000",
     fontFamily: "Gordita-Medium",
-    color: "gray", // Default text color
+    color: "gray",
   },
   activeTabIcon: {
-    tintColor: "#FF69B4", // Change this to the fill color you want
+    tintColor: "#6F00FF", // Change this to the fill color you want
   },
   activeTabText: {
-    color: "#FF69B4", // Change this to the fill color you want
+    color: "#6F00FF", // Change this to the fill color you want
   },
 });
 
