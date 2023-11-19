@@ -11,6 +11,9 @@ import { useFonts } from "expo-font";
 import { useNavigation } from "@react-navigation/native";
 import ContinueReadingPage from "../Components/ContinueReadingPage";
 import PopularNow from "../Components/PopularNow";
+import Biography from "../Components/homescreens/Biography";
+import BestSelfHelp from "../Components/homescreens/BestSelfHelp";
+import RandomQuoteGenerator from "../Components/homescreens/RandomQuoteGenerator";
 import { ScrollView } from "react-native-gesture-handler";
 
 const Home = () => {
@@ -62,13 +65,15 @@ const Home = () => {
       </View>
       <ContinueReadingPage />
       <PopularNow />
+      <Biography />
+      <BestSelfHelp />
+      <RandomQuoteGenerator />
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#fff",
     paddingHorizontal: 20,
     marginTop: 3,

@@ -81,6 +81,7 @@ View the raw content of this file to understand the format.
 - [ ] Work on the website ~3d #feat @john 2020-03-20
 - [ ] Fix the homepage ~1d #bug @jane
   - [ ] https://www.flaticon.com/stickers-pack/reading-19?word=book
+  - [ ] Add sections like Best books , Biographical books and populargenres
 
 ### In Progress
 
