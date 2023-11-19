@@ -35,11 +35,11 @@ And that's not all; Wordy Odyssey is continually evolving, with more exciting fe
 ## :eyes: Preview
 
 <p>
-    <img src="./assets/screenshots/Rectangle (4).png" width="250">
-   <img src="./assets/screenshots/Rectangle (2).png" width="250">
-   <img src="./assets/screenshots/Rectangle (1).png" width="250">
-   <img src="./assets/screenshots/Rectangle (3).png" width="250">
-   <img src="./assets/screenshots/Rectangle.png" width="250">
+    <img src="./assets/screenshots/LoginPage.jpg" width="250">
+   <img src="./assets/screenshots/HomePage.jpg.jpg" width="250">
+   <img src="./assets/screenshots/Libraray.jpg" width="250">
+   <img src="./assets/screenshots/profile.jpg" width="250">
+   <img src="./assets/screenshots/Window.jpg" width="250">
 </p>
 
 ## :gear: Core Tech Stack

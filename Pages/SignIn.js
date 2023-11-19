@@ -98,6 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 20,
+    backgroundColor: "#fff",
     paddingTop: 10,
   },
   backButton: {
