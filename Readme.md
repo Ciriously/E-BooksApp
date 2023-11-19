@@ -41,9 +41,11 @@ And that's not all; Wordy Odyssey is continually evolving, with more exciting fe
    <p align="center">
   <img width="350" height="280"src="./assets/screenshots/HomePage.jpg" width="250"></p>
   <p align="center">
-  <img width="350" height="280"src="./assets/screenshots/Libraray.jpg" width="250"></p>
-   <img src="./assets/screenshots/profile.jpg" width="250">
-   <img src="./assets/screenshots/Window.jpg" width="250">
+  <img width="200" height="320"src="./assets/screenshots/Libraray.jpg" width="250"></p>
+  <p align="center">
+  <img width="200" height="300"src= "./assets/screenshots/profile.jpg" width="250"></p>
+    <p align="center">
+  <img width="450" height="350" src="./assets/screenshots/Window.jpg" width="250"></p>
 </p>
 
 ## :gear: Core Tech Stack
