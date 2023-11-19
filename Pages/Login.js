@@ -5,8 +5,8 @@ import { useFonts } from "expo-font";
 const Onboarding = ({ navigation }) => {
   // Load custom fonts
   const [fontsLoaded] = useFonts({
-    "Gordita-Bold": require("./assets/fonts/Gordita-Bold.ttf"),
-    "Inter-Bold": require("./assets/fonts/Inter-Bold.ttf"),
+    "Gordita-Bold": require("../assets/fonts/Gordita-Bold.ttf"),
+    "Inter-Bold": require("../assets/fonts/Inter-Bold.ttf"),
   });
 
   if (!fontsLoaded) {
@@ -21,7 +21,7 @@ const Onboarding = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* Top Centered Image */}
-      <Image source={require("./assets/icon2.png")} style={styles.icon} />
+      <Image source={require("../assets/icon2.png")} style={styles.icon} />
 
       {/* Welcome Text */}
       <Text style={styles.welcomeText}>Welcome Back, Aditya</Text>
