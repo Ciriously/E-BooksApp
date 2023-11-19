@@ -40,17 +40,17 @@ const Register = ({ navigation }) => {
       <View style={styles.inputContainer}>
         {/* Input Fields */}
         <TextInput
-          style={styles.input}
+          style={[styles.input, styles.inputText]} // Apply inputText style
           placeholder="Name"
           underlineColorAndroid="transparent"
         />
         <TextInput
-          style={styles.input}
+          style={[styles.input, styles.inputText]} // Apply inputText style
           placeholder="Email"
           underlineColorAndroid="transparent"
         />
         <TextInput
-          style={styles.input}
+          style={[styles.input, styles.inputText]} // Apply inputText style
           placeholder="Password"
           secureTextEntry={true}
           underlineColorAndroid="transparent"
@@ -112,13 +112,13 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   welcomeText: {
-    fontSize: 28,
+    fontSize: 42,
     fontFamily: "poppins-ExtraBold",
-    marginBottom: 10,
+    marginBottom: 5,
     textAlign: "left",
   },
   descriptionText: {
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: "poppins-Medium",
     textAlign: "left",
     marginBottom: 28,
@@ -137,7 +137,12 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     paddingLeft: 10,
     fontSize: 16,
-    fontFamily: "poppins-Medium",
+    fontFamily: "poppins-Regular",
+  },
+  inputText: {
+    color: "blue",
+    fontFamily: "poppins-ExtraBold",
+    fontSize: 18,
   },
   signupButton: {
     backgroundColor: "blue",
