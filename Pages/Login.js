@@ -43,7 +43,7 @@ const Onboarding = ({ navigation }) => {
         <Image source={require("../assets/login.png")} style={styles.icon} />
 
         {/* Welcome Text */}
-        <Text style={styles.welcomeText}>Welcome Back, Aditya !</Text>
+        <Text style={styles.welcomeText}>Welcome !</Text>
 
         {/* Description Text */}
         <Text style={styles.descriptionText}>

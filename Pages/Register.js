@@ -32,11 +32,11 @@ const Register = ({ navigation }) => {
 
       <View style={styles.textContainer}>
         {/* Welcome Text */}
-        <Text style={styles.welcomeText}>Welcome!</Text>
+        <Text style={styles.welcomeText}>Welcome! 👋</Text>
 
         {/* Description Text */}
         <Text style={styles.descriptionText}>
-          Create an account to unlock a world of words and stories.
+          Create an account to unlock a world of words and stories. ✨
         </Text>
       </View>
 
@@ -78,7 +78,6 @@ const Register = ({ navigation }) => {
 
       {/* Social Media Icons */}
       <View style={styles.iconContainer}>
-        {/* Replace these URLs with your actual paths to social media icons */}
         <Image source={require("../assets/facebook.png")} style={styles.icon} />
         <Image source={require("../assets/google.png")} style={styles.icon} />
         <Image source={require("../assets/apple.png")} style={styles.icon} />

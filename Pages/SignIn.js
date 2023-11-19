@@ -36,11 +36,11 @@ const SignIn = ({ navigation }) => {
 
       <View style={styles.textContainer}>
         {/* Welcome Text */}
-        <Text style={styles.welcomeText}>Welcome Back!</Text>
+        <Text style={styles.welcomeText}>Welcome Back! </Text>
 
         {/* Description Text */}
         <Text style={styles.descriptionText}>
-          Sign in to continue your literary journey.
+          Sign in to continue your literary journey. 🚀
         </Text>
       </View>
 

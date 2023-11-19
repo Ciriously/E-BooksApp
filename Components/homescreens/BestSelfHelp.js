@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     fontFamily: "Gordita-Regular",
     fontSize: 14,
     color: "gray",
-    marginLeft: 10,
+    marginLeft: 0,
   },
 });
 
