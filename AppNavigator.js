@@ -9,6 +9,7 @@ import Reader from "./Reader";
 import Footer from "./Footer";
 import Login from "./Pages/Login";
 import NewBookInfo from "./Components/NewBookInfo";
+import Register from "./Pages/Register";
 
 const Stack = createStackNavigator();
 
@@ -51,8 +52,13 @@ const AppNavigator = () => {
           component={Login}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="Register"
+          component={Register}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
-      <Footer />
+      {/* <Footer /> */}
     </NavigationContainer>
   );
 };
