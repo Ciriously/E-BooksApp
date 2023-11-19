@@ -86,13 +86,15 @@ const styles = StyleSheet.create({
   logo: {
     width: 40,
     height: 40,
-    marginRight: 10,
+    marginLeft: 20,
+    marginLeft: 20,
     marginTop: 20,
   },
   brandName: {
     fontSize: 20,
     fontFamily: "poppins-SemiBold",
     marginTop: 25,
+    marginLeft: 10,
   },
   container: {
     flex: 1,

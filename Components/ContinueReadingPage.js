@@ -5,7 +5,6 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
-  ProgressBarAndroid,
   Image,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -94,12 +93,15 @@ const TabList = () => {
             >
               <Text style={styles.bookTitle}>{item.bookTitle}</Text>
               <Text style={styles.authorName}>{item.authorName}</Text>
-              <ProgressBarAndroid
-                style={styles.progressBar}
-                styleAttr="Horizontal"
-                indeterminate={false}
-                progress={item.progress}
-              />
+              {/* Custom Progress Bar */}
+              <View style={styles.progressBarContainer}>
+                <View
+                  style={[
+                    styles.progressBar,
+                    { width: `${item.progress * 100}%` },
+                  ]}
+                />
+              </View>
               <TouchableOpacity
                 style={styles.continueButton}
                 onPress={() => handleContinuePress(item)}
@@ -158,18 +160,26 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   bookTitle: {
-    fontFamily: "Gordita-Bold", // Use the Gordita Bold font
+    fontFamily: "Gordita-Bold",
     fontSize: 16,
     fontWeight: "bold",
     color: "black",
   },
   authorName: {
-    fontFamily: "Gordita-Regular", // Use the Gordita Regular font
+    fontFamily: "Gordita-Regular",
     fontSize: 14,
     color: "black",
   },
+  progressBarContainer: {
+    height: 4,
+    backgroundColor: "#E0E0E0",
+    borderRadius: 5,
+    marginTop: 5,
+  },
   progressBar: {
-    marginTop: 10,
+    height: "100%",
+    borderRadius: 5,
+    backgroundColor: "#6F00FF", // Change the color of the progress bar
   },
   continueButton: {
     backgroundColor: "white",
@@ -183,7 +193,7 @@ const styles = StyleSheet.create({
   },
   continueButtonText: {
     color: "#404066",
-    fontFamily: "Gordita-Medium", // Use the Gordita Medium font
+    fontFamily: "Gordita-Medium",
     fontSize: 14,
   },
 });
