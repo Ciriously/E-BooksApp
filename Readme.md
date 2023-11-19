@@ -36,7 +36,7 @@ And that's not all; Wordy Odyssey is continually evolving, with more exciting fe
 
 <p>
     <img src="./assets/screenshots/LoginPage.jpg" width="250">
-   <img src="./assets/screenshots/HomePage.jpg.jpg" width="250">
+   <img src="./assets/screenshots/HomePage.jpg" width="250">
    <img src="./assets/screenshots/Libraray.jpg" width="250">
    <img src="./assets/screenshots/profile.jpg" width="250">
    <img src="./assets/screenshots/Window.jpg" width="250">
