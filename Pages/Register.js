@@ -62,7 +62,10 @@ const Register = ({ navigation }) => {
       </View>
 
       {/* Signup Button */}
-      <TouchableOpacity style={styles.signupButton}>
+      <TouchableOpacity
+        style={styles.signupButton}
+        onPress={() => navigation.navigate("Onboarding")}
+      >
         <Text style={styles.signupButtonText}>Sign up</Text>
       </TouchableOpacity>
 

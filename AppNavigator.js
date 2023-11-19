@@ -17,7 +17,7 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Onboarding">
+      <Stack.Navigator initialRouteName="Login">
         <Stack.Screen
           name="Onboarding"
           component={Onboarding}
@@ -64,7 +64,7 @@ const AppNavigator = () => {
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
-      {/* <Footer /> */}
+      <Footer />
     </NavigationContainer>
   );
 };

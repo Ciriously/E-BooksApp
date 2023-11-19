@@ -7,6 +7,7 @@ import * as Font from "expo-font";
 Font.loadAsync({
   "Gordita-Regular": require("../assets/fonts/Gordita-Regular.ttf"),
   "Gordita-Bold": require("../assets/fonts/Gordita-Bold.ttf"),
+  "Gordita-Medium": require("../assets/fonts/Gordita-Medium.ttf"),
   "Inter-Medium": require("../assets/fonts/Inter-Medium.ttf"),
   "Inter-Regular": require("../assets/fonts/Inter-Regular.ttf"),
   "Inter-Bold": require("../assets/fonts/Inter-Bold.ttf"),
@@ -29,7 +30,7 @@ const Onboarding = ({ navigation }) => {
   };
 
   const handleGetStarted = () => {
-    navigation.navigate("Login");
+    navigation.navigate("Home");
   };
 
   return (

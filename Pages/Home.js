@@ -62,7 +62,6 @@ const Home = () => {
       </View>
       <ContinueReadingPage />
       <PopularNow />
-      {/* <Footer /> */}
     </ScrollView>
   );
 };

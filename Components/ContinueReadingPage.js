@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     marginLeft: -10,
   },
   title: {
-    fontFamily: "Gordita-Medium", // Use the Gordita Medium font
+    fontFamily: "Gordita-Bold",
     fontSize: 24,
     marginBottom: 10,
     paddingLeft: 10,
